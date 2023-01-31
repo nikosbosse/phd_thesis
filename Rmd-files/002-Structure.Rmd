@@ -1,0 +1,33 @@
+# Thesis structure {-}
+
+- Declaration
+- Abstract
+- Acknowledgements
+- Table of Contents
+  - List of Figures
+  - List of Tables
+- Acronyms
+
+- Introduction and thesis outline
+  - Motivation / Summary
+  - Aims and objectives
+    - Aims (general broad goals)
+    - Objectives (very specific goals (one goal = one paper usually))
+  - Thesis outline
+- Background
+  - Data sources used in the thesis? 
+    - Germany and Poland Data
+      - Ethical approval
+    - European Forecast Hub Data
+- Paper 1 (including research paper cover sheet)
+- Paper 2
+- Paper 3
+- Discussion and Conclusions
+  - Overview of study findings
+    - Paper 1
+    - Paper 2...
+  - Strengths and Limitations
+  - Implications and limitations
+  - Directions for future work
+  - Conclusion
+- References (apparently only for the extra part you wrote)

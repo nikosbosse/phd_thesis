@@ -1,0 +1,7 @@
+book_filename: "pdf-thesis"
+title: "Some Title for my thesis that I need to change in _bookdown.yml"
+language:
+  ui:
+    chapter_name: "lala"
+delete_merged_file: true
+output_dir: "../docs"

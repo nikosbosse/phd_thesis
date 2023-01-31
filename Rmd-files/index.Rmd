@@ -1,0 +1,133 @@
+--- 
+title: |
+  $~~~~~$
+  
+  $~~~~~$
+  
+  **PhD Thesis**
+  
+  $~~~~~$
+  
+  $~~~~~$
+  
+  Nikos Ioannis Bosse
+  
+  $~~~~~$
+  
+  Department of Infectious Disease Epidemiology
+  
+  Faculty of Epidemiology and Population Health
+  
+  Centre for Mathematical Modelling of Infectious Diseases
+  
+  $~~~~~$
+  
+  London School of Hygiene & Tropical Medicine
+  
+  $~~~~~$
+  
+  $~~~~~$
+  
+  July 2021
+  
+  $~~~~~$
+site: bookdown::bookdown_site
+output: 
+  bookdown::pdf_book:
+    fig_caption: yes
+    toc_depth: 3
+    latex_engine: pdflatex
+    # latex_engine: xelatex
+    toc: False
+    includes:
+      in_header: preamble.tex
+    citation_package: natbib
+    keep_tex: yes
+documentclass: book
+classoption: openany
+output_dir: "../docs"
+bibliography: [bib/phdthesis.bib, bib/packages.bib]
+biblio-style: apalike
+link-citations: yes
+header-includes:
+  - \usepackage{amssymb}
+  - \usepackage{tabu}
+  # stuff to make sure that the word "Chapter doesn't appear randomly"
+  - \usepackage{titlesec} 
+  - \titleformat{\chapter}{\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
+  - \titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+after_body-includes:
+  - \addcontentsline{toc}{chapter}{Bibliography}
+github-repo: nikosbosse/phd_thesis
+cover-image: logo_university.png
+description: "Some description"
+---
+
+```{r setup, include=FALSE}
+library(kableExtra)
+library(magrittr)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(.packages(), 
+                   'bookdown', 'knitr', 'rmarkdown', 'nloptr',
+                   'scoringutils', 'data.table',
+                   'EpiSoon', 'EpiNow', 'EpiNow2',
+                   'stackr', 'forecastHybrid', 
+                   'quantgen', 'rstan'), 
+                 'bib/packages.bib')
+```
+
+
+
+\vspace*{\fill}
+
+**Supervisors**
+
+*Sebastian Funk*
+
+Professor of Infectious Disease Dynamics and Wellcome Trust Senior Research Fellow
+
+London School of Hygiene & Tropical Medicine
+
+\vspace{10pt}
+
+*Anne Cori*
+
+Lecturer in Outbreak analysis and modelling, Faculty of Medicine, School of Public Health
+
+Imperial College London
+
+\vspace{10pt}
+
+*Edwin van Leeuwen*
+
+Senior Mathematical Modeller
+
+Public Health England
+
+\vspace{30pt}
+
+**Advisory Committee**
+
+*Sam Abbott*
+
+Research Fellow in Real-time Modelling
+
+London School of Hygiene & Tropical Medicine
+
+\vspace{10pt}
+
+*Johannes Bracher*
+
+Postdoctoral Researcher
+
+Chair of Statistics and Econometrics at Karlsruhe Insitute for Technology 
+
+\vspace*{\fill}
+
+
+\newpage

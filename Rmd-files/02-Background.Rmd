@@ -1,0 +1,72 @@
+# Backgrond {#background}
+
+## Forecast evaluation
+- Why forecast evaluation: useful for 
+
+- History of forecast evaluation 
+  - started with the log score, then Brier score, etc... 
+  - proper scoring rule
+  - possible decomposition
+  
+- more detailed info in Chapter \@{scoringutils}
+
+- Problems in forecast evaluation
+  - application is tedious in R. From a user perspective it's not clear which score to use
+  - different scores have different properties and it's unclear which one corresponds to what you want. Solutions to that in Chapters \@(scoringutils) and \@(LogTransform). 
+  - we only have a mathematical score, unclear which score corresponds to what usefulness
+  - 
+
+
+## Human Judgement forecasting
+
+- Literature review
+
+- Things that have been tried in the past, with what success
+
+- Comparisons between forecasts and models
+
+- Open things: 
+  - direct 1:1 comparison
+  - analysis of what human judgment adds to a computer model
+  - no open source tools to 
+
+- Crowdforecastr tool
+  - R shiny
+  - probabilistic forecasting
+
+## Mathematical modelling of infectious diseases
+
+- uses computers
+- necessarily some combination of human judgement and algorithmic assumptions
+- varying degrees of human intervention. 
+
+### Mechanistic models
+
+- mechanistic assumptions about disease progress
+- learning about paramters 
+- SIR models
+
+### Statistical models
+
+- uses statistical features, without making any assumptions about the disease progress
+
+### Semi-mechanistic models
+
+Mixture of the two
+
+
+
+## Data sources
+
+### German and Polish Forecast Hub
+
+- cite papers
+- one of several Forecast Hubs. 
+
+### Human forecasts of COVID-19 in Germany and Poland
+
+- Collected using crowdforecastr
+- Ethics approval: NUMBER
+
+### European Forecast Hub 
+

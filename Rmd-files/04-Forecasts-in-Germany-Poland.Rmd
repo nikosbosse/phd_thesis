@@ -1,0 +1,4 @@
+# Transformation of forecasts for evaluating predictive performance in an epidemiological context
+
+- Application of the scoring rules to infer usefulness of different types of forecasts
+

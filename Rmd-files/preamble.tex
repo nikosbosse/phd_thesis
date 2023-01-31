@@ -1,0 +1,48 @@
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={150mm,237mm},
+ left=30mm,
+ top=30mm,
+ }
+
+
+% \usepackage[pagestyles]{titlesec}   
+% \newpagestyle{mystyle}{\setfoot[\thepage][][]{}{}{\thepage}}
+% \pagestyle{mystyle}
+
+
+\usepackage{fancyhdr}   
+\usepackage{bbm} % use the mathbb{1} symbol
+
+\pagestyle{fancy}
+\fancyhead{}% clear headers
+\fancyfoot{}% clear footers
+\renewcommand{\headrulewidth}{0pt}% eliminate horizontal line
+\fancyfoot[CO, CE]{\thepage}
+
+\usepackage{hyperref}
+\def\UrlBreaks{\do\/\do-}
+
+
+\renewcommand{\mathbb}{\mathbbm} 
+
+
+% Redefine figure environment to alway use position ``H''
+% \usepackage{float}
+% \let\origfigure\figure
+% \let\endorigfigure\endfigure
+% \renewenvironment{figure}[1][2] {
+%     \expandafter\origfigure\expandafter[h]
+% } {
+%     \endorigfigure
+% }

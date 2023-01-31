@@ -1,0 +1,28 @@
+# Discussion {#discussion}
+
+- Issue with human forecasting: 
+  - trust in public health decision making
+  
+  
+  
+  
+
+## Future work
+
+- combining humans and models
+  - Rt forecasting
+  - using humans to predict parameters
+    - Metaculus question we authored
+    - Monkeypox work that Tom made - things are complicated
+  - Heaving humans come up with model weights
+
+- Related: Develop ways to scale human forecasting
+
+- Unclear what score corresponds to what usefulness: e.g. if we show decision makers different forecasts, which score will choose the model that different decision makers describe as the most useful one. 
+- Also lots of potential development for new and composite scores. 
+
+- Modelling of scores - e.g. by standardising the scores. 
+
+- how do details of human forecasters
+
+

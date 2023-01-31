@@ -1,0 +1,108 @@
+# Introduction {#intro}
+
+## Motivation
+
+- Public health decision making requires making assumptions about the future. Forecasts can help guide decisions. 
+- Relevant sets of tasks are: 
+  - make forecasts
+  - improve forecasts
+  - decide which forecasts to use in order to inform decision making
+    - requires evaluation
+    - requires comparison between models
+    - requires understanding of different methods to do forecasting
+
+- Lots of things are unclear: 
+  - is it worth using mathematical modelling? 
+  - should you ask a human or a computer model
+  - how can you compare different models against each other, rather than scoring only a single forecaster?
+  - which score should you use? 
+  - what tools can you use? 
+  - what is a good way to visualise results? 
+  - what is a good score in an epidemiological setting. 
+
+
+## Aims and objectives
+
+
+The aim of this PhD is to improve infectious disease forecasting and its usefulness to public health
+officials in the UK and other countries.
+
+### Aims
+<!-- (general broad goals) -->
+The aim of this thesis is to improve the usefulness of infectious disease forecasting in public health decision making by obtaining a deeper understanding of 
+- what a good forecast is and how we can identify useful forecasts
+- how human judgement and mathematical modelling can be used to obtain useful forecasts
+
+
+- Develop an understanding of the value of human input and mathematical modelling for infectious disease forecasting
+- Develop a better understanding of how forecasts can be evaluated in an epidemiological context. 
+
+### Objectives
+
+(very specific goals (one goal = one paper usually))
+
+- Establish appropriate tools to evaluate predictions in `R` and review best practices in forecast evaluation (Paper 1)
+- Develop tools to elicit human forecasts of infectious diseases, specifically COVID-19 (Paper 2)
+- Analyse the role of human judgement in forecasting COVID-19 in Germany and Poland. Compare human judgement forecasts against model-based predictions and analyse the added benefit of human input over mathematical models (Paper 2)
+- Improve current evaluation methods so that they are betters suited for evaluating forecasts in an epidemiological context. (Paper 3)
+
+<!-- 2. Collect predictions of COVID-19 from humans in Germany, Poland. Compare these human -->
+<!-- predictions against model-based forecasts to discern relative strengths and weaknesses of human -->
+<!-- forecasters vs. model-based approaches -->
+<!-- 3. Collect human forecasts of reported cases and deaths from COVID-19 in the UK as well as -->
+<!-- human predictions of the effective reproduction number Rt to explore ways in which human -->
+<!-- insight and epidemiological modelling can be combined -->
+
+## Thesis outline
+
+Chapter \@ref(background) gives background. 
+
+- Forecast evaluation
+- Human judgement forecasting
+- Data that was used
+
+Chapter \@ref(scoringutils) (Paper 1)
+
+Chapter \@ref(GermanyPoland) (Paper 2)
+
+- Application of the scoring rules explained in Chapter \@ref(scoringutils). 
+- Development of a new app that collects probabilistic forecasts of humans
+- Comparison humans vs. models
+
+Chapter \@ref(LogTransform) (Paper 3)
+
+- Answer to the inadequacies of scoring seen in Chapter 2. 
+- Idea to transform forecasts before scoring
+
+Potentially: Chapter on UK forecasting challenge
+- does it replicate
+- apply new scoring metric
+- looking at way to combine Rt and human forecast. 
+
+Chapter \@ref(Discussion) discusses results. 
+
+
+## Code
+
+- this thesis
+- scoringutils
+- crowdforecastr
+- Germany and Poland
+- Log or not
+- UK forecasting challenge
+
+## Additional achievements
+- talks
+
+
+Some text. 
+
+<!-- Policy makers have recently started to rely on forecasts to make decisions. Accurate knowledge of the future is immensely valuable in all sorts of areas from farming to economics to public health. With the rise of the novel coronavirus SARS-CoV-2, statistical forecasting has gathered renewed attention. As the virus has spread over the globe, more and more research teams began forecasting the trajectory of the pandemic to help inform public policy. Several countries like the United States, Germany and the United Kingdom have therefore started to aggregate forecasts from different teams. Among these efforts, the US Forecast Hub [@umass-amherstinfluenzaforecastingcenterofexcellenceCovid19forecasthubOrg2020] is the largest and most visible. Its goal is to collect forecasts, to aggregate them, and to make them available to policy makers and the general public in the best possible way. Two questions have been at the centre of these efforts: The first is "how can we best evaluate the performance of a model?" The second is "how can we combine and aggregate different models to get the best possible prediction?". These two questions will be our guiding questions as well throughout this work.  -->
+
+
+
+
+
+
+
+
