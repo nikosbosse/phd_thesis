@@ -1,4 +1,7 @@
-# Transformation of forecasts for evaluating predictive performance in an epidemiological context
+# Comparing human and model-based forecasts of COVID-19 in Germany and Poland
 
 - Application of the scoring rules to infer usefulness of different types of forecasts
+
+
+<!-- \includepdf[pages=-]{papers/Paper-2-Forecasts-Germany-Poland.pdf} -->
 

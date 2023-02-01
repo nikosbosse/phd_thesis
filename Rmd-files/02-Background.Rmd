@@ -1,5 +1,25 @@
 # Backgrond {#background}
 
+## Forecasting and Modelling
+
+define
+- modeller
+- forecasters
+- forecast
+- prediction
+- model
+- scenario modelling
+
+Forecasting, in its most general sense, is simply a statement about the future. 
+
+
+ensembles
+
+- Different between forecast and scenario
+
+Applications of epidemiological models differ in the way they make statements about the future. Forecasts aim to predict the future as it will occur, while scenario modelling and projections aim to represent what the future could look like under certain scenario assumptions or if conditions stayed the same as they were in the past. Forecasts can be judged by comparing them against observed data. Since it is much harder to fairly assess the accuracy and usefulness of projections and scenario modelling in the same way, this work focuses on forecasts, which represent only a subset of all epidemiological modelling.
+
+
 ## Forecast evaluation
 - Why forecast evaluation: useful for 
 

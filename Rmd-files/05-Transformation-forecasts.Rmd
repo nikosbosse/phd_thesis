@@ -1,4 +1,4 @@
-# Comparing human and model-based forecasts of COVID-19 in Germany and Poland
+# Transformation of forecasts for evaluating predictive performance in an epidemiological context
 
 
 

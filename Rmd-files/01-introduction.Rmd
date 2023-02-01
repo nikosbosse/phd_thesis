@@ -2,44 +2,21 @@
 
 ## Motivation
 
-- Public health decision making requires making assumptions about the future. Forecasts can help guide decisions. 
-- Relevant sets of tasks are: 
-  - make forecasts
-  - improve forecasts
-  - decide which forecasts to use in order to inform decision making
-    - requires evaluation
-    - requires comparison between models
-    - requires understanding of different methods to do forecasting
+<!-- Public health decision making in the context of infectious disease outbreaks requires making assumptions about the future. Accurate knowledge of what  -->
 
-- Lots of things are unclear: 
-  - is it worth using mathematical modelling? 
-  - should you ask a human or a computer model
-  - how can you compare different models against each other, rather than scoring only a single forecaster?
-  - which score should you use? 
-  - what tools can you use? 
-  - what is a good way to visualise results? 
-  - what is a good score in an epidemiological setting. 
+Modelling and forecasting of infectious diseases has in the past helped inform decision making in many different settings, e.g. for influenza [e.g. 1,2–4], dengue fever [e.g. 5,6,7], ebola [e.g. 8,9], chikungunya [e.g. 10,11]. During the COVID-19 epidemic, infectious disease modelling and forecasting played a particularly prominent role and garnered much interest from both decision makers and the general public (CITATION Cramer, Bracher, Hubs, Funk short term forecasts UK). 
 
+The usefulness of a model or forecast, of course, depends on how accurately it is able to capture existing and future disease dynamics. Accuracy needs to be measured in order to be able to improve on existing models and forecasts or in order to make a decision about the degree to which they should influence decision making. When evaluating and comparing multiple models or forecasters, we can apply different metrics that assess predictive performance by comparing forecasts against observed data. Different metrics reward or penalise certain behaviours of forecasts differently and the the choice of the metric hence influences the result of the evaluation. It is therefore important to identify and use metrics that capture what forecast consumers actually care about. Past literature gives little guidance on what kinds of metric are especially appropriate in an epidemiological context and how to best present results. 
 
-## Aims and objectives
+In the beginning of a new disease outbreak, data on the past accuracy of a forecaster or model is usually sparse as there are only few data points available. It is therefore important to establish an understanding of the underlying characteristics of different types of modelling and forecasting approaches that could help estimate a priori how trustworthy different predictions may be. A similar decision that needs to be made in the context of an early disease outbreak is to allocate resources to different types of modelling and forecasting approaches. Infectious disease modelling usually requires significant amount of resources in terms of time and effort. The resulting models normally represents a mixture of mathematical model assumptions and human judgement required to develop and tune the model. Given the high costs of developing models, it is useful to ask what mathematical modelling is able to add above human judgement alone. 
 
+### Aims and objectives
 
-The aim of this PhD is to improve infectious disease forecasting and its usefulness to public health
-officials in the UK and other countries.
+The aim of this thesis is to help improve the usefulness of infectious disease forecasting in public health decision making by obtaining a deeper understanding of 
+- what a 'good' forecast is in an epidemiological context and how we can identify useful forecasts
+- how human judgement and mathematical modelling can best be used to obtain useful forecasts
 
-### Aims
-<!-- (general broad goals) -->
-The aim of this thesis is to improve the usefulness of infectious disease forecasting in public health decision making by obtaining a deeper understanding of 
-- what a good forecast is and how we can identify useful forecasts
-- how human judgement and mathematical modelling can be used to obtain useful forecasts
-
-
-- Develop an understanding of the value of human input and mathematical modelling for infectious disease forecasting
-- Develop a better understanding of how forecasts can be evaluated in an epidemiological context. 
-
-### Objectives
-
-(very specific goals (one goal = one paper usually))
+It strives to accomplish this by fulfilling the following objectives: 
 
 - Establish appropriate tools to evaluate predictions in `R` and review best practices in forecast evaluation (Paper 1)
 - Develop tools to elicit human forecasts of infectious diseases, specifically COVID-19 (Paper 2)
