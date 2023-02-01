@@ -2,44 +2,85 @@
 
 ## Forecasting and Modelling
 
-define
-- modeller
-- forecasters
-- forecast
-- prediction
-- model
-- scenario modelling
+A forecast, in most general terms, is a stated belief about the future (CITATION Gneiting and Raftery 2007) as it will occur. Such a belief can be stated in qualitative or quantitative or quantitative terms. This thesis will almost exclusively focus on quantitative forecasts. 
 
-Forecasting, in its most general sense, is simply a statement about the future. 
+Quantitative forecasts can either be probabilistic, or they can be point forecasts. A probabilistic forecast (CITATION Held) is a full predictive probability distribution over multiple possible outcomes. A point forecast, on the other hand is a single number that represents a single number for the expected outcome. A probabilistic forecast therefore incorporates uncertainty about different outcomes in a way that a point forecast cannot. Probabilistic forecasts are therefore generally more useful for decision making (CITATION) and will be the focus of this thesis. Some authors (CITATION) make a distinction between 'forecast', meaning a probabilistic forecast and 'prediction', meaning a point forecast. We will use the two terms interchangeably. 
 
+We understand anyone or anything that issues a forecast as a forecaster. This can either be a person voicing their judgement, or it can be a computer model or algorithm that issues a forecast based on given inputs, or a combination of both. When more clarity is required, we use the terms "human forecaster" and "mathematical model". 
 
-ensembles
+A model in the context of this thesis is understood as a simplified representation of the world that allows someone to make statements about the future based on certain inputs. A model can be the specific understanding of the world that a human forecaster has in its mind to make sense of past and current events and that allows her to make forecasts about the future. The term model can also denote a mathematical or computer model, a set of encoded rules that describe and represent the processes that govern events in reality. Mathematical models usually use computers to map observed inputs to a model output. If not otherwise stated, we use the term 'model' to describe a mathematical model which produces a forecast (rather than the mental representation of the world in a person's head). Furthermore, we use the term 'modeller' to denote a person who develops, codes, or adapts a mathematical model. 
+<!-- Alternatively put the model part here -->
 
-- Different between forecast and scenario
+The output of an epidemiological model is not necessarily a forecast. It could also, for example, be a nowcast (CITATION Sam?), or a scenario or projection (CITATION?). A nowcast is a description of the world as it is in the present in absence of definitive data. A scenario is the representation of the future as it could look like under certain scenario assumptions, whereas a projection describes the future as it could unfold if conditions stayed the same as they were in the past. [CITATION]. This is in contrast to a forecast which aims to predict the future as it will occur. 
 
-Applications of epidemiological models differ in the way they make statements about the future. Forecasts aim to predict the future as it will occur, while scenario modelling and projections aim to represent what the future could look like under certain scenario assumptions or if conditions stayed the same as they were in the past. Forecasts can be judged by comparing them against observed data. Since it is much harder to fairly assess the accuracy and usefulness of projections and scenario modelling in the same way, this work focuses on forecasts, which represent only a subset of all epidemiological modelling.
+Forecasts (and nowcasts) can be judged eventually by comparing them against observed data. This is much harder for scenarios or projections, as they usually make statements about a world that was not observed. While scenarios are harder to evaluate, they are arguably more useful for decision making. Scenarios are able to show what could occur under different assumptions and different courses of actions. It is more difficult to use forecasts directly as a basis for decision-making. By definition, a forecast has to estimate and incorporate the most likely course of action in order to make a statement about the future as it will occur. 
+
+In order to increase predictive accuracy, individual forecasts can be combined into an ensemble, which usually performs better than any individual forecaster (CITATION Yamana, Kandula, and Shaman 2016; Gneiting and Raftery 2005). Ensembles can be either equally weighted or trained, by assigning ensemble weights based on past performance of a forecaster. Past research suggests that it is very difficult to form ensembles which outperform an equally weighted ensemble (CITATION Claeskens et al. 2016), but not impossible (CITATION Logan C. Brooks et al. n.d., n.d.). During the COVID-19 pandemic, forecasts for different target have been systematically collected, aggregated and evaluated by three COVID-19 Forecast Hubs in the US (CITATION), Germany and Poland (CITATION) and Europe (CITATION). 
+
+Define "Crowd"
 
 
 ## Forecast evaluation
-- Why forecast evaluation: useful for 
 
-- History of forecast evaluation 
-  - started with the log score, then Brier score, etc... 
-  - proper scoring rule
-  - possible decomposition
+Forecast evaluation in a narrow sense is the process of assessing how well a forecasters predictions align with the actual observations. In a broader sense of the term, forecast evaluation would also include elements such as an assessment of the usefulness of the forecasts to the forecast consumer, or analyses that would help understand underlying characteristics of the model or forecaster better. Forecast evaluation helps modellers and forecasters to improve future predictions, and helps decision makers decide which forecasts to take into account when making decisions. 
+
+For any given forecasting task, the primary aim of any forecaster should be to issue a predictive distribution $F$ that equals the (usually unknown) true data-generating distribution $G$ (Gneiting et al. 2007). For an ideal forecast we therefore have
+$$F = G$$,
+where $F$ and $G$ are cumulative distribution functions. 
+
+The similarity between forecasts and observations is usually evaluated using so called proper scoring rules. A scoring rule $S(F, y)$ is a function of the forecast $F$ and the observation $y$ that returns a single numeric value. A scoring rule is said to be proper, if an ideal forecaster receives the best score in expectation. Additional metrics can be used to investigate certain characteristics of a forecaster in more detail, like e.g. a systematic bias, or a tendency to issue overconfident predictions. Chapter \@{scoringutils} will go into more detail regarding different scoring metrics and approaches. 
+
+<!-- - History of forecast evaluation  -->
+<!--   - started with the log score, then Brier score, etc...  -->
+<!--   - proper scoring rule -->
+<!--   - possible decomposition -->
   
-- more detailed info in Chapter \@{scoringutils}
+Scoring rules and evaluation metrics describe a mathematical relationship between forecasts and observations and capture different aspects of how a forecast deviates from observed values. This makes them objective and comparable. However, scoring rules and evaluation measures are not able to directly measure the usefulness of forecasts to forecast consumers. For example, underprediction of a target like hospitalisations could lead to more severe consequences than overprediction for a decision maker relying on a forecast in a way that's not necessarily captured by a given metric. The selection of an appropriate metric therefore should ideally reflect the qualities a forecast consumer values in a forecast. Chapter \@(scoringutils) reviews different existing metrics and discusses when their application is appropriate. Chapter \@(LogTransformation) suggests an adaptation of widely-used scoring rules that is particularly suited to evaluating forecasts in an epidemiological context.
 
-- Problems in forecast evaluation
-  - application is tedious in R. From a user perspective it's not clear which score to use
-  - different scores have different properties and it's unclear which one corresponds to what you want. Solutions to that in Chapters \@(scoringutils) and \@(LogTransform). 
-  - we only have a mathematical score, unclear which score corresponds to what usefulness
-  - 
+Proper scoring rules (CITAITONS Gneiting, Box, Brier) assign a numerical score to a pair of a single predictive distribution and a single observation. Comparing multiple forecasts over time, and across locations and forecast targets comes with additional issues [@cramerEvaluationIndividualEnsemble2021]. One common issue is that scores usually scale with the variance of a forecast target and therefore cannot easily be compared across targets that span several orders of magnitude. We propose a novel solution for this problem in Chapter \@(LogTransformation). A second issue arises in the presence of missing forecasts, where forecasters differ in what targets they have issued a forecast for. @cramerEvaluationIndividualEnsemble2021 have proposed a pairwise tournament between models based on the set of overlapping forecasts. A third issue is the complexity of obtaining and presenting results across many dimensions, such as e.g. time, location and forecast targets. Chapter \@ref(scoringutils) presents `scoringutils`, an `R` package that facilitates forecast evaluation, visual presentation of results, and also implements the pairwise comparison approach suggest in @cramerEvaluationIndividualEnsemble2021. 
 
 
 ## Human Judgement forecasting
 
 - Literature review
+
+Human judgement forecasting has a long history and efforts have been made in very different contexts, both inside and outside of academia. @zellnerSurveyHumanJudgement2021 (https://royalsocietypublishing.org/doi/10.1098/rsos.201187) provides a comprehensive literature review of human judgement forecasting approaches. @arvanIntegratingHumanJudgement2019 gives a review of academic papers that combined human judgement and mathematical modelling, focusing on product forecasting. 
+
+@mcandrewAggregatingPredictionsExperts2021 review aggregating predictions from experts. 
+
+
+In the context of epidemiology: 
+
+- @farrowHumanJudgmentApproach2017
+- @mcandrewExpertJudgmentModel2022
+- @mcandrewExpertJudgmentModel2022
+- @mcandrewChimericForecastingCombining2022
+- 
+
+
+
+There are
+- prediction markets
+  - for money, e.g. PredictIt, betting platforms, 
+  - no money
+- prediction platforms
+- academic efforts. 
+
+- Delphi method
+
+
+
+From paper
+Previous work has examined such direct human forecasts in various contexts, such as geo- politics [19, 20], meta-science [21, 22], sports [23] and epidemiology [11, 24, 25]. 
+
+Several pre- diction platforms [26–28] and prediction markets [29] have been created to collate expert and non-expert predictions. 
+
+However, with the notable exception of [11], these forecasts were not designed to be evaluated alongside model-based forecasts and usually follow their own (often binary) prediction formats. Direct human forecasts may be able to take into account insights and relationships between variables which are hard to specify using epidemiological models. However, it is not entirely clear in which situations human forecasts perform well or badly. For example, [11] found that humans could outperform computer models at predicting the 2014/15 and 2015/16 flu season in the US, a setting where the disease was well known and information about previous seasons was available. However, humans tended to do slightly worse at predicting the 2014/15 outbreak of chikungunya in the Americas, a disease previously largely unobserved and unknown in these regions at the time.
+
+
+
+
+
 
 - Things that have been tried in the past, with what success
 
@@ -54,11 +95,18 @@ Applications of epidemiological models differ in the way they make statements ab
   - R shiny
   - probabilistic forecasting
 
+
+
+
 ## Mathematical modelling of infectious diseases
 
 - uses computers
 - necessarily some combination of human judgement and algorithmic assumptions
 - varying degrees of human intervention. 
+
+
+From paper: 
+Individual computational models usually rely to varying degrees on mechanistic assump- tions about infectious disease dynamics (such as SIR-type compartmental models that aim to represent how individuals move from being susceptible to infected and then recovered or dead). Some are more statistical in nature (such as time series models that detect statistical pat- terns without explicitly modelling disease dynamics). How exactly such a mathematical or computational model is constructed and which assumptions are made depends on subjective opinion and judgement of the researcher who develops and refines the model. Models are commonly adjusted and improved based on whether the model output looks plausible to the researchers involved.
 
 ### Mechanistic models
 

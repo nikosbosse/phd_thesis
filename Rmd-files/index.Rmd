@@ -46,7 +46,7 @@ output:
 documentclass: book
 classoption: openany
 output_dir: "../docs"
-bibliography: [bib/phdthesis.bib, bib/packages.bib]
+bibliography: [bib/phdthesis.bib, bib/packages.bib, bib/scoringutils.bib, bib/GermanyPoland.bib, bib/LogTransformation.bib]
 biblio-style: apalike
 link-citations: yes
 header-includes:
