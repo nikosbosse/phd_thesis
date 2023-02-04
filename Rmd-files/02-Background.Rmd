@@ -44,45 +44,33 @@ Proper scoring rules (CITAITONS Gneiting, Box, Brier) assign a numerical score t
 
 - Literature review
 
-Human judgement forecasting has a long history and efforts have been made in very different contexts, both inside and outside of academia. @zellnerSurveyHumanJudgement2021 (https://royalsocietypublishing.org/doi/10.1098/rsos.201187) provides a comprehensive literature review of human judgement forecasting approaches. @arvanIntegratingHumanJudgement2019 gives a review of academic papers that combined human judgement and mathematical modelling, focusing on product forecasting. 
+Human judgement forecasting has a long history and efforts have been made in very different contexts and fields, both inside and outside of academia. Human judgement elicitation processes also differ greatly in their methodology and selection of forecasters. Efforts in the past range from surveys of experts or laypeople, to structured discussions between experts aimed to produce a consensus forecast to large crowd forecasting efforts with thousands of forecasters predicting on a given question. One of the first structured methods proposed to support decision making through forecasting is the Delphi method developed by the RAND Corporation in the 1950s in the context of the Cold War [@dalkeyExperimentalApplicationDELPHI1963; @PrescribingAustraliansLiving]. Forecasts were elicited in a structured process where experts would provide a first estimate, then discuss their estimates and potential disagreements, and then provide a final round of estimates. 
 
-@mcandrewAggregatingPredictionsExperts2021 review aggregating predictions from experts. 
+Outside of academia, human predictions and estimates are routinely used to help decision making in private companies, think tanks and governments. In addition, public predictions on various topics of interest have been collected on several online prediction markets or prediction platforms. Prediction markets such as PredictIt, Manifold Markets, Polymarket [CITATIONS] and traditional betting platforms such as betfair allow users to place bets on an outcome by spending either real money or token money to buy "yes" or "no"-shares in the binary outcome of a given market. Prediction platforms such as Metaculus, INFER or Good Judgement Open elicit direct forecasts from users and offer either points or sometimes monetary rewards for the most accurate users. These markets and platforms have been used in predicting a broad spectrum of events such as elections (CITATION US), wars, or the spread of infectious diseases. Academic authors working on human judgement forecasting have in the past either collaborated with existing prediction platforms (CITATIONS McAndrew, Tetlock), used more traditional means of eliciting predictions such as surveys (CITATION Recchia) or the Delphi method (CITATION), or developed their own methods (CITATION Farrow). 
 
+Several reviews have been published on human judgement forecasting, beginning with Armstrong et al. (1986). 
+(Bunn and Wright, 1991; Goodwin and Wright, 1993; Lawrence et al., 2006; Webby and O'Connor, 1996) (focusing on comparing performance of humans and models).
 
-In the context of epidemiology: 
+@zellnerSurveyHumanJudgement2021 (https://royalsocietypublishing.org/doi/10.1098/rsos.201187) provides a comprehensive literature review of human judgement forecasting approaches. @arvanIntegratingHumanJudgement2019 gives a review of academic papers that combine human judgement and mathematical modelling, focusing on product forecasting. @mcandrewAggregatingPredictionsExperts2021 review methods to aggregate predictions from experts. 
 
+While human judgement forecasting has a long tradition in many other academic fields such as such as geo- politics [19, 20], demand forecasting, meta-science [21, 22], sports [23], its application to infectious diseases has only recently attracted more widespread attention. Notable examples of human judgement forecasting of infectious diseases include 
 - @farrowHumanJudgmentApproach2017
 - @mcandrewExpertJudgmentModel2022
-- @mcandrewExpertJudgmentModel2022
+- @mcandrewAggregatingHumanJudgment2022
 - @mcandrewChimericForecastingCombining2022
-- 
+- @mcandrewEarlyHumanJudgment2022
+- @recchiaHowWellDid2021
+- @daviesHumanJudgementForecasting2022. 
+
+What has been done with what success / performance. 
+
+However, not that much work done to compare human forecasts against model-based predictions in epi (has been done in other fields).
+
+From paper: 
+However, with the notable exception of [11], these forecasts were not designed to be evaluated alongside model-based forecasts and usually follow their own (often binary) prediction formats. 
+Direct human forecasts may be able to take into account insights and relationships between variables which are hard to specify using epidemiological models. However, it is not entirely clear in which situations human forecasts perform well or badly. For example, @farrowHumanJudgmentApproach2017 found that humans could outperform computer models at predicting the 2014/15 and 2015/16 flu season in the US, a setting where the disease was well known and information about previous seasons was available. However, humans tended to do slightly worse at predicting the 2014/15 outbreak of chikungunya in the Americas, a disease previously largely unobserved and unknown in these regions at the time.
 
 
-
-There are
-- prediction markets
-  - for money, e.g. PredictIt, betting platforms, 
-  - no money
-- prediction platforms
-- academic efforts. 
-
-- Delphi method
-
-
-
-From paper
-Previous work has examined such direct human forecasts in various contexts, such as geo- politics [19, 20], meta-science [21, 22], sports [23] and epidemiology [11, 24, 25]. 
-
-Several pre- diction platforms [26–28] and prediction markets [29] have been created to collate expert and non-expert predictions. 
-
-However, with the notable exception of [11], these forecasts were not designed to be evaluated alongside model-based forecasts and usually follow their own (often binary) prediction formats. Direct human forecasts may be able to take into account insights and relationships between variables which are hard to specify using epidemiological models. However, it is not entirely clear in which situations human forecasts perform well or badly. For example, [11] found that humans could outperform computer models at predicting the 2014/15 and 2015/16 flu season in the US, a setting where the disease was well known and information about previous seasons was available. However, humans tended to do slightly worse at predicting the 2014/15 outbreak of chikungunya in the Americas, a disease previously largely unobserved and unknown in these regions at the time.
-
-
-
-
-
-
-- Things that have been tried in the past, with what success
 
 - Comparisons between forecasts and models
 
@@ -90,6 +78,8 @@ However, with the notable exception of [11], these forecasts were not designed t
   - direct 1:1 comparison
   - analysis of what human judgment adds to a computer model
   - no open source tools to 
+
+### Crowdforecastr
 
 - Crowdforecastr tool
   - R shiny
