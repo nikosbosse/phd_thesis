@@ -1,4 +1,5 @@
-# Discussion {#discussion}
+# Discussion 
+\label{sec:discussion}
 
 - Issue with human forecasting: 
   - trust in public health decision making

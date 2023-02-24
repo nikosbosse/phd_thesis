@@ -1,4 +1,18 @@
 # Transformation of forecasts for evaluating predictive performance in an epidemiological context
+\label{sec:LogTransformation}
+
+Chapter \@ref(sec:LogTransformation) (Paper 3) investigates in greater detail how forecasts should be evaluated specifically in an epidemiological context. The scoring methods discussed in Chapter \ref{sec:scoringutils} were not explicitly developed for application in infectious disease forecasting, but rather describe general mathematical relationships that are detached from the actual context. Evaluating the forecasts we submitted to the German and Polish Forecast Hub, as described in Chapter \ref{sec:GermanyPoland}, surfaced issues with the way that forecasts are currently commonly evaluated in epidemiology. Determining predictive performance based on the absolute distance between forecast and observation, as is common practice, neglects the exponential nature of infectious disease processes. It also leads to scores that are dominated by outlier forecasts, especially during periods of high incidence, and makes it hard to compare forecasts across time, locations or forecast targets. To address these issues, Chapter \@ref(sec:LogTransformation) introduces the idea of transforming forecasts and observations before applying a score in order to obtain an evaluation that is more adequate in an epidemiological context. 
+
+
+
+\clearpage
+
+
+<!-- \includepdf[pages=-]{papers/Research Paper Cover Sheet-18 Paper 2.docx.pdf} -->
+
+<!-- \includepdf[pages=-]{Paper-3-LogTransformation.pdf} -->
+
+
 
 
 

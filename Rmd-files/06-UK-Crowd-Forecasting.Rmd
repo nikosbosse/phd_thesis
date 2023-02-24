@@ -1,0 +1,9 @@
+# Human Judgement Forecasting of COVID-19 in the UK
+\label{sec:UKforecastingChallenge}
+
+
+Chapter \@ref(sec:UKforecastingChallenge) (Paper 4) presents a follow-up study to the one presented in Chapter \ref{sec:GermanyPoland}. It analyses the results of a public forecasting challenge in the UK, 
+applying insights from Chapter \@ref(sec:LogTransformation) on how to evaluate forecasts in an epidemiological context. Forecasts were submitted to the European COVID-19 Forecast Hub and again compared to the ensemble of all forecasts submitted to the Forecast Hub, this time also taking transformations of forecasts into account for the evaluation. In addition, Chapter \@ref(sec:UKforecastingChallenge) explores a novel way to combine human judgement and mathematical modelling by asking forecasters to predict the effective reproduction number $R_t$ which then gets mapped to cases and deaths using an epidemiological model. 
+
+
+\clearpage
