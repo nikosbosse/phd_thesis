@@ -1,11 +1,27 @@
 # Discussion 
 \label{sec:discussion}
 
+
+## Summary
+- established tools to evaluate forecasts and reviewed current scoring methods
+- improved current evaluation methods in an epidemiological context
+- created an open source forecast elicitation platform and used it to inform COVID response
+- investigated the role of human judgement forecasting
+- 
+
 - Issue with human forecasting: 
   - trust in public health decision making
   
+- 
   
+## Limitations
+
+- R package could need more metrics and is still under active development
+- Established evidence that humans can be good, but still evidence needed regarding the role of human judgement in modelling
+  - it would be nice to have a study where you compare a) human forecasts, b) human forecasters who adjust model outputs and c) just the model outputs. 
+  - would also need better tools for that. 
   
+
   
 
 ## Future work
@@ -16,6 +32,7 @@
     - Metaculus question we authored
     - Monkeypox work that Tom made - things are complicated
   - Heaving humans come up with model weights
+  - having humans adapt models
 
 - Related: Develop ways to scale human forecasting
 
