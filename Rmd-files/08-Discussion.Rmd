@@ -1,30 +1,106 @@
 # Discussion 
 \label{sec:discussion}
 
+<!-- Summary of key results -->
 
-## Summary
-- established tools to evaluate forecasts and reviewed current scoring methods
-- improved current evaluation methods in an epidemiological context
-- created an open source forecast elicitation platform and used it to inform COVID response
-- investigated the role of human judgement forecasting
-- 
+<!-- Strengths and limitations -->
 
-- Issue with human forecasting: 
-  - trust in public health decision making
-  
-- 
-  
+<!-- Contributions of this research relative to previous knowledge -->
+
+<!-- Implications and future research opportunities -->
+
+
+## Summary and contributions to existing work
+
+The work presented in this thesis made several contributions related to forecast evaluation and human judgement forecasting in epidemiology. 
+
+### Forecast evaluation {-}
+
+The first major contribution is towards improving the evaluation of infectious disease forecasts, both from a practical and a theoretical perspective. 
+
+#### scoringutils {-}
+The `scoringutils` package and the review of scoring practices presented in Chapter \ref{sec:scoringutils} help make forecast evaluation and the necessary tools more accessible to researchers and decision makers. The package implements a suite of proper scoring rules and other scoring metrics in a flexible framework and offers extensive documentation to guide users through the process. The paper reviews the theoretical foundation of forecast evaluation and provides justification for the choice of a particular score over another. Most of the scores implemented in `scoringutils` had been implemented previously. Notable existing packages are `scoringRules` CITATION, `topmodels`, `tscount` and `Metrics`, among others. `scoringutils` improves usability over existing software and is especially geared towards comparing forecasts from different models. All forecasts can be scored and summarised in a convenient `data.frame` format and the package offers functionality to compare performance visually across different dimensions and account for missing forecasts. `scoringutils` has since been used in published and unpublished work supporting major public health organisations such the US Centers for Disease Control and Prevention, the European Centre for Disease Prevention and Control, the UK Health Security Agency, and Médecins Sans Frontièrs. 
+
+#### Evaluating forecasts in an epidemiological context {-}
+In addition to improving the tools available for forecast evaluations, this thesis made a theoretical contribution to our understanding of forecast evaluations in the context of epidemiology. We argued that transforming forecasts and observations prior to applying the continuous ranked probability score (CRPS) or the weighted interval score (WIS) makes it possible to obtain more meaningful results than with the untransformed CRPS and WIS. Both the WIS (which is a quantile-based approximation of the CRPS) measure the absolute distance between the forecast and the observation, which scales with the order of magnitude of the target and may not be the most appropriate metric given the exponential nature of infectious disease processes. The natural logarithm is a particularly attractive transformation in an epidemiological context, as the resulting score represents a measure of how well the forecasts predicted the exponential growth rate. The CRPS applied to log-transformed forecasts can also be understood as an approximate probabilistic version of the symmetric relative error. Furthermore, the natural log transformation can serve as a variance-stabilising transformation, helping to make scores more comparable across time, locations and forecast targets. We compared scores on the natural scale and on the log scale for a set of forecasts submitted to the European COVID-19 Forecast Hub and found that rankings between models changed. Scores were more evenly distributed across time, locations and forecast targets on the log scale. Forecasters were less severely penalised for missing the peak on the log scale, and received higher penalties for missing an upswing of incidences. 
+
+### Human judgement {-}
+
+The second major contribution of this thesis is in improving our understanding of the role of human judgement in infectious disease forecasting and the potential and limitations of human judgement forecasts. 
+
+In order to be able to compare probabilistic forecasts from human forecasters against computational models, we developed a new open source platform and R package, `crowdforecastr`, which allows the elicitation of probabilistic time series forecasts from individual forecasters. When we submitted our forecasts to the German and Polish Forecast Hub in 2020 and 2021, our study was the first one in an epidemiological context to compare full predictive distributions from individual users against model-based predictions. A previous study by \cite{farrowHumanJudgmentApproach2017} had elicited point forecasts from individual participants and combined them to a probabilistic forecasts based on the mean and variation in participants' predictions. 
+
+In the first study presented in Chapter \ref{sec:GermanyPoland}, we compared a small crowd of human forecasters against two minimally-tuned epidemiological models and an ensemble of model-based predictions submitted to the German and Polish Forecast Hub. These submissions contributed to a shared effort to inform the public and public health decision makers in Germany and Poland during the earlier phases of COVID-19. We found predictions for cases from human forecasters to be slightly better in terms of the weighted interval score than forecasts of the Hub ensemble, but worse when predicting deaths. Our minimally-tuned model forecasts performed comparable to our crowd forecasts for short horizons, but noticeably worse for longer horizons. This suggests that human judgement is beneficial in guiding model-based predictions when conditions change over time. We also found that even forecasts that are worse than an pre-existing ensemble can help to improve ensemble forecasts when including it in that ensemble. 
+
+In the second study in the UK presented in Chapter \ref{uk-challenge}, we repeated the basic set-up of the first study with a larger number of participants in a different country. Forecasts were elicited as part of a public forecasting challenge over the course of 13 weeks and submitted to the European COVID-19 Forecast Hub. In addition, we tested a novel forecasting approach in which users submitted a forecast of the effective reproduction number $R_t$, which would then get mapped to reported cases and deaths using the R package `EpiNow2` CITAITON. Following the conclusions presented in Chapter \ref{sec:LogTransformation} we evaluated forecasts using both untransformed and log-transformed predictions and observations. We found performance of human and model-based forecasts to be overall comparable. The Hub ensemble performed slightly better than human forecasts on the natural scale, and slightly worse when evaluated on the log scale. Our novel $R_t$ approach performed comparable to other forecasts when predicting cases (which forecasters could observe directly), and noticeably worse for death predictions (which forecasters couldn't see), suggesting that the underlying model did not accurately capture the relation between cases and deaths. 
+
+
 ## Limitations
 
-- R package could need more metrics and is still under active development
+### Forecast evaluation {-}
+
+The `scoringutils` package is still under active development, with new issues opening periodically on Github and new features added. To improve usability, handling of errors needs to be improved in order to make error messages more informative to the users. While tests are in place for most functions, new bugs may also be discovered in the future. 
+
+Theoretical considerations suggest that log-transforming forecasts before applying the CRPS or WIS yields a score that better reflects the exponential nature of infectious disease processes. However, whether or not a forecast is useful and a score is meaningful ultimately depends on its purpose and the utility the forecast consumer derives from it. In our work we have only provided a small example that serves to illustrate the effects of transforming forecasts before evaluation. Whether or not scores on the log scale appear indeed more meaningful to researchers and policy makers remains to be seen. More work is needed to obtain a more complete understanding of the behaviour of scores on the log scale across different applications. 
+
+In addition, practical issues arise when transforming forecasts. The natural logarithm, for example, does not allow any negative or zero values in the forecasts or observations. In Chapter \ref{LogTransformation} we suggested to add a small value to all observations and forecasts in order to deal with zero values. This does not break propriety, but introduces more degrees of freedom and changes the scores in subtle ways. How to best deal with negative values remains unclear. These may not be a problem in an epidemiological context, where observations are usually counts, but may hinder application in other contexts. Issues may arise even when no zeros or negative values are present, especially when forecasts or observations are small. A small absolute difference between forecast and observation can translate to a large relative difference, causing scores to blow up. This issue can arise in particular if forecasts and observations are restricted to assume integer values. Users may find that forecasts made for small targets can dominate overall scores in an undesirable way, depending on the relationship between mean and variance of the forecast target. \cite{BRACHER} argued before that the fact that CRPS scales with the forecast target conveys meaningful information that gets lost when log-transforming targets. 
+Some desirable transformations other than the natural logarithm, such as converting absolute forecasts to forecasts of weekly growth rates by dividing every predicted value by the value in the week before, are restricted to forecasts that are stored in a sample-based format. 
+
+
+### Human judgement {-}
+
+This thesis has studied the potential of human judgement to forecast infectious diseases such as COVID-19. Both studies, however, suffered from a low number of participants and it is unclear how well results could generalise to other settings. 
+
+The first study in Germany and Poland, presented in Chapter \ref{GermanyPoland}, had a median of six participants per week (the Hub ensemble had a similar amount of ensemble models). Participants were also recruited in a very ad hoc fashion among friends and colleagues, making the sample not representative. In this sense, the study is maybe better understood as a case study of an acute outbreak response effort using human judgement forecasts. The overall evaluation was made difficult by the fact that scores varied a lot from week to week and across locations and forecast horizons. This introduced many researcher degrees of freedom, as results and interpretations could change depending on how forecasts were evaluated. For the study in Germany and Poland, we have only looked at forecasts on the natural scale and therefore lack knowledge of what results would have looked like on the log scale. 
+
+Given the very context-dependent nature of human judgement forecasting, results may not generalise well to other settings. While we attempted to replicate some our findings in Germany and Poland in a second study, there are a few factors that make a direct comparison difficult. In the first study, human forecasts were combined using a mean ensemble, while in the second study we used a quantile-wise median (following the practice adopted by all COVID-19 Forecast Hubs). Changes in the number and composition of forecasters, the shorter time horizon and the different setting (including vaccination and a different COVID-19 variant) also limit comparability. In both studies, human forecasts were compared against an ensemble of model-based predictions. However, those ensembles differed both in terms of their size and their composition. 
+
+All forecasts were only analysed at an aggregate level. We therefore could not obtain an understanding of how individuals contributed to the overall ensemble forecasts. For example, we cannot know how the number of participants influenced overall performance, or whether participants learned over time. Results may have looked different had we successfully retained participants over the course of the studies. In both our studies, most participants only submitted a single forecast, which may have affected overall performance. In addition, we treated forecasters more or less as black box, without qualitatively investigating their thought processes in detail. 
+
+We asked forecasters to self-identify as "experts" by whether or not they worked in infectious disease modelling or had professional experience in any related field. However, the value of that information was limited in a few ways. Firstly, we were not able to check participants' statements. Secondly, the question we asked was perhaps too broad to provide a useful measure of the participant's actual expertise for the task at hand. Something like a short quiz may have helped to get more detailed information on the participants' level of expertise. 
+
+One aim of the study in Germany and Poland was to improve our understanding of the relative contributions of human judgement forecasting and epidemiological modelling. However, our approach of comparing direct human forecasts with minimally-tuned epidemiological models was likely flawed and may not have entirely achieved this goal. Firstly, there was a partial, but not complete overlap between the researchers who designed our minimally-tuned models and the participants of the forecasting study. Had these two groups either been disjunct or identical, a fairer comparison would have been possible. This, however, would have come at the expense of an even further reduced number of participants to the point that only one or two forecasters might have been left on a given date. Furthermore, human forecasters were allowed to use any model they liked as an input and we therefore cannot make statements about the extent to which human forecasts were guided by epidemiological modelling. 
+The notion of "minimally-tuned" we used in our study is very vague, making it unclear how much our models were actually guided by human judgement rather than being just a mathematical representation of our abstract understanding about infectious disease dynamics. Furthermore, we only used two minimally-tuned models for this study. It is unclear whether our models are able to represent a general class of "minimally-tuned epidemiological models", or whether they are just two specific models with particular strengths and weaknesses that may not generalise to other models. 
+
+For the second crowd forecasting study in the UK, we experimented with a novel forecasting approach that asked human forecasters to predict the effective reproduction number $R_t$ which then got mapped to reported cases and deaths. Forecasters were able to see a preview of the case forecast implied by their $R_t$ forecast, but could not see the corresponding prediction for deaths. Participants therefore had to rely entirely on the underlying model and were not able to adjust parameters like the CFR or the delay between cases and deaths. The specific results we obtained therefore depend very strongly on the specific model used and therefore does not really accurately reflect the overall potential of the proposed approach. 
+
+## Implications
+
+The low number of participants was in part due to time constraints - the first forecasts were submitted within three weeks of the start of this PhD. However, even with more time and preparation, as was possible for the second study in the UK, we found it hard to recruit a large number of participants. 
+
+
+Forecast evaluation needs to be improved. 
+This reflects a general problem in epidemiological forecasting: we don't really have a good baseline model. 
+  
+- unclear whether humans are better than at deaths
+- humans can in principle keep up with models. 
+- human judgement forecasting is hard and it's really tough to recruit enough participants.
+- Implications for the Forecast Hub evaluations. Two proper scoring rules commonly used in Epidemiology (among others, by the COVID-19 Forecast Hubs in the US, Europe, and Germany / Poland) are the 
+
+
+
+
+
+- Rt forecast stuff. 
+  - highly dependent on the model. CFR, no 
+
 - Established evidence that humans can be good, but still evidence needed regarding the role of human judgement in modelling
   - it would be nice to have a study where you compare a) human forecasts, b) human forecasters who adjust model outputs and c) just the model outputs. 
   - would also need better tools for that. 
-  
 
-  
+
 
 ## Future work
+
+Adding more metrics to the package. In particular, the ability to pass in custom scoring functions. More metrics for point forecasts. 
+
+- doing qualitative interviews with human forecasters might be helpful. 
+
+- thinking about standards for forecast evaluation would be good. Too many researcher degrees of freedom. 
+
+- Interesting question: which scores are more consistent. 
+
+- using samples
 
 - combining humans and models
   - Rt forecasting
@@ -44,3 +120,26 @@
 - how do details of human forecasters
 
 
+An overall more promising approach might have been to give human forecasters the opportunity to directly manipulate the output from the computational models. These adapted forecasts could then have compared to the original predictions to investigate whether human judgement would have helped to improve directly on the computational models. These forecasts could then have been compared against human predictions made in the complete abscence of any epidemiological modelling. 
+
+
+
+<!-- Parking lot -->
+<!-- The following aims were set out in Chapter \ref{sec:introduction}:  -->
+<!-- - Establish appropriate tools to evaluate predictions in `R` and review best practices in forecast evaluation -->
+<!-- - Develop tools to elicit human forecasts of infectious diseases, specifically COVID-19 -->
+<!-- - Analyse the role of human judgement in forecasting COVID-19 in Germany and Poland. Compare human judgement forecasts against model-based predictions and analyse the added benefit of human input over mathematical models -->
+<!-- - Improve current evaluation methods so that they are betters suited for evaluating forecasts in an epidemiological context -->
+<!-- - Examine the potential to use public crowd forecasting tournaments to predict COVID-19 in the UK and explore possibilities to combine human judgement and epidemiological modelling -->
+
+
+<!-- - established tools to evaluate forecasts and reviewed current scoring methods -->
+<!-- - improved current evaluation methods in an epidemiological context -->
+<!-- - created an open source forecast elicitation platform and used it to inform COVID response -->
+<!-- - investigated the role of human judgement forecasting -->
+<!-- -  -->
+
+<!-- - Issue with human forecasting:  -->
+<!--   - trust in public health decision making -->
+  
+-
