@@ -12,14 +12,14 @@
 
 ## Summary and contributions to existing work
 
-The work presented in this thesis made several contributions related to forecast evaluation and human judgement forecasting in epidemiology. 
+The work presented in this thesis has made several contributions related to forecast evaluation and human judgement forecasting in epidemiology. 
 
 ### Forecast evaluation {-}
 
 The first major contribution is towards improving the evaluation of infectious disease forecasts, both from a practical and a theoretical perspective. 
 
 #### scoringutils {-}
-The `scoringutils` package and the review of scoring practices presented in Chapter \ref{sec:scoringutils} help make forecast evaluation and the necessary tools more accessible to researchers and decision makers. The package implements a suite of proper scoring rules and other scoring metrics in a flexible framework and offers extensive documentation to guide users through the process. The paper reviews the theoretical foundation of forecast evaluation and provides justification for the choice of a particular score over another. Most of the scores implemented in `scoringutils` had been implemented previously. Notable existing packages are `scoringRules` CITATION, `topmodels`, `tscount` and `Metrics`, among others. `scoringutils` improves usability over existing software and is especially geared towards comparing forecasts from different models. All forecasts can be scored and summarised in a convenient `data.frame` format and the package offers functionality to compare performance visually across different dimensions and account for missing forecasts. `scoringutils` has since been used in published and unpublished work supporting major public health organisations such the US Centers for Disease Control and Prevention, the European Centre for Disease Prevention and Control, the UK Health Security Agency, and Médecins Sans Frontièrs. 
+The `scoringutils` package and the review of scoring practices presented in Chapter \ref{sec:scoringutils} help make forecast evaluation and the necessary tools more accessible to researchers and decision makers. The package implements a suite of proper scoring rules and other scoring metrics in a flexible framework and offers extensive documentation to guide users through the process. The paper reviews the theoretical foundation of forecast evaluation and provides justification for the choice of a particular score over another. Most of the scores implemented in `scoringutils` had been implemented previously. Notable existing packages are `scoringRules` \citep{scoringRules}, `topmodels` \citep{topmodels}, `tscount` \citep{tscount} and `Metrics` \citep{Metrics}, among others. `scoringutils` improves usability over existing software and is especially geared towards comparing forecasts from different models, regardless of how those forecasts were generated. All forecasts can be scored and summarised in a convenient `data.frame` format and the package offers functionality to compare performance visually across different dimensions and account for missing forecasts. `scoringutils` has since been used in published and unpublished work supporting major public health organisations such the US Centers for Disease Control and Prevention, the European Centre for Disease Prevention and Control, the UK Health Security Agency, and Médecins Sans Frontièrs. 
 
 #### Evaluating forecasts in an epidemiological context {-}
 In addition to improving the tools available for forecast evaluations, this thesis made a theoretical contribution to our understanding of forecast evaluations in the context of epidemiology. We argued that transforming forecasts and observations prior to applying the continuous ranked probability score (CRPS) or the weighted interval score (WIS) makes it possible to obtain more meaningful results than with the untransformed CRPS and WIS. Both the WIS (which is a quantile-based approximation of the CRPS) measure the absolute distance between the forecast and the observation, which scales with the order of magnitude of the target and may not be the most appropriate metric given the exponential nature of infectious disease processes. The natural logarithm is a particularly attractive transformation in an epidemiological context, as the resulting score represents a measure of how well the forecasts predicted the exponential growth rate. The CRPS applied to log-transformed forecasts can also be understood as an approximate probabilistic version of the symmetric relative error. Furthermore, the natural log transformation can serve as a variance-stabilising transformation, helping to make scores more comparable across time, locations and forecast targets. We compared scores on the natural scale and on the log scale for a set of forecasts submitted to the European COVID-19 Forecast Hub and found that rankings between models changed. Scores were more evenly distributed across time, locations and forecast targets on the log scale. Forecasters were less severely penalised for missing the peak on the log scale, and received higher penalties for missing an upswing of incidences. 
@@ -32,10 +32,12 @@ In order to be able to compare probabilistic forecasts from human forecasters ag
 
 In the first study presented in Chapter \ref{sec:GermanyPoland}, we compared a small crowd of human forecasters against two minimally-tuned epidemiological models and an ensemble of model-based predictions submitted to the German and Polish Forecast Hub. These submissions contributed to a shared effort to inform the public and public health decision makers in Germany and Poland during the earlier phases of COVID-19. We found predictions for cases from human forecasters to be slightly better in terms of the weighted interval score than forecasts of the Hub ensemble, but worse when predicting deaths. Our minimally-tuned model forecasts performed comparable to our crowd forecasts for short horizons, but noticeably worse for longer horizons. This suggests that human judgement is beneficial in guiding model-based predictions when conditions change over time. We also found that even forecasts that are worse than an pre-existing ensemble can help to improve ensemble forecasts when including it in that ensemble. 
 
-In the second study in the UK presented in Chapter \ref{uk-challenge}, we repeated the basic set-up of the first study with a larger number of participants in a different country. Forecasts were elicited as part of a public forecasting challenge over the course of 13 weeks and submitted to the European COVID-19 Forecast Hub. In addition, we tested a novel forecasting approach in which users submitted a forecast of the effective reproduction number $R_t$, which would then get mapped to reported cases and deaths using the R package `EpiNow2` CITAITON. Following the conclusions presented in Chapter \ref{sec:LogTransformation} we evaluated forecasts using both untransformed and log-transformed predictions and observations. We found performance of human and model-based forecasts to be overall comparable. The Hub ensemble performed slightly better than human forecasts on the natural scale, and slightly worse when evaluated on the log scale. Our novel $R_t$ approach performed comparable to other forecasts when predicting cases (which forecasters could observe directly), and noticeably worse for death predictions (which forecasters couldn't see), suggesting that the underlying model did not accurately capture the relation between cases and deaths. 
+In the second study in the UK presented in Chapter \ref{uk-challenge}, we repeated the basic set-up of the first study with a larger number of participants in a different country. Forecasts were elicited as part of a public forecasting challenge over the course of 13 weeks and submitted to the European COVID-19 Forecast Hub. In addition, we tested a novel forecasting approach in which users submitted a forecast of the effective reproduction number $R_t$, which would then get mapped to reported cases and deaths using the R package `EpiNow2` \citep{epinow2}. Following the conclusions presented in Chapter \ref{sec:LogTransformation} we evaluated forecasts using both untransformed and log-transformed predictions and observations. We found performance of human and model-based forecasts to be overall comparable. The Hub ensemble performed slightly better than human forecasts on the natural scale, and slightly worse when evaluated on the log scale. Our novel $R_t$ approach performed comparable to other forecasts when predicting cases (which forecasters could observe directly), and noticeably worse for death predictions (which forecasters couldn't see), suggesting that the underlying model did not accurately capture the relation between cases and deaths. 
 
 
 ## Limitations
+
+The work presented in this thesis is subject to various important limitations. This section gives an overview and summary of those limitations, while further details can be found in the corresponding chapters. 
 
 ### Forecast evaluation {-}
 
@@ -43,7 +45,7 @@ The `scoringutils` package is still under active development, with new issues op
 
 Theoretical considerations suggest that log-transforming forecasts before applying the CRPS or WIS yields a score that better reflects the exponential nature of infectious disease processes. However, whether or not a forecast is useful and a score is meaningful ultimately depends on its purpose and the utility the forecast consumer derives from it. In our work we have only provided a small example that serves to illustrate the effects of transforming forecasts before evaluation. Whether or not scores on the log scale appear indeed more meaningful to researchers and policy makers remains to be seen. More work is needed to obtain a more complete understanding of the behaviour of scores on the log scale across different applications. 
 
-In addition, practical issues arise when transforming forecasts. The natural logarithm, for example, does not allow any negative or zero values in the forecasts or observations. In Chapter \ref{LogTransformation} we suggested to add a small value to all observations and forecasts in order to deal with zero values. This does not break propriety, but introduces more degrees of freedom and changes the scores in subtle ways. How to best deal with negative values remains unclear. These may not be a problem in an epidemiological context, where observations are usually counts, but may hinder application in other contexts. Issues may arise even when no zeros or negative values are present, especially when forecasts or observations are small. A small absolute difference between forecast and observation can translate to a large relative difference, causing scores to blow up. This issue can arise in particular if forecasts and observations are restricted to assume integer values. Users may find that forecasts made for small targets can dominate overall scores in an undesirable way, depending on the relationship between mean and variance of the forecast target. \cite{BRACHER} argued before that the fact that CRPS scales with the forecast target conveys meaningful information that gets lost when log-transforming targets. 
+In addition, practical issues arise when transforming forecasts. The natural logarithm, for example, does not allow any negative or zero values in the forecasts or observations. In Chapter \ref{LogTransformation} we suggested to add a small value to all observations and forecasts in order to deal with zero values. This does not break propriety, but introduces more degrees of freedom and changes the scores in subtle ways. How to best deal with negative values remains unclear. These may not be a problem in an epidemiological context, where observations are usually counts, but may hinder application in other contexts. Issues may arise even when no zeros or negative values are present, especially when forecasts or observations are small. A small absolute difference between forecast and observation can translate to a large relative difference, causing scores to blow up. This issue can arise in particular if forecasts and observations are restricted to assume integer values. Users may find that forecasts made for small targets can dominate overall scores in an undesirable way, depending on the relationship between mean and variance of the forecast target. \cite{bracherEvaluatingEpidemicForecasts2021} argued before that the fact that CRPS scales with the forecast target conveys meaningful information that gets lost when log-transforming targets. 
 Some desirable transformations other than the natural logarithm, such as converting absolute forecasts to forecasts of weekly growth rates by dividing every predicted value by the value in the week before, are restricted to forecasts that are stored in a sample-based format. 
 
 
@@ -64,7 +66,57 @@ The notion of "minimally-tuned" we used in our study is very vague, making it un
 
 For the second crowd forecasting study in the UK, we experimented with a novel forecasting approach that asked human forecasters to predict the effective reproduction number $R_t$ which then got mapped to reported cases and deaths. Forecasters were able to see a preview of the case forecast implied by their $R_t$ forecast, but could not see the corresponding prediction for deaths. Participants therefore had to rely entirely on the underlying model and were not able to adjust parameters like the CFR or the delay between cases and deaths. The specific results we obtained therefore depend very strongly on the specific model used and therefore does not really accurately reflect the overall potential of the proposed approach. 
 
-## Implications
+## Implications and avenues for future work
+
+### Forecast evaluation {-}
+
+Broad interest in the `scoringutils` package suggests that developing and maintaining tools may be an effective way to contribute to the field of infectious disease forecasting. Unfortunately, academia provides few mechanisms to incentivise and reward the development and maintenance of tools in a collaborative and sustainable way. While creating a new tool allows the authors to get some recognition through publication of their work, there are few ways to reward researchers for contributing to existing projects or to put effort into continuously developing software after publication. This promotes an ecosystem with a large number of disconnected tools that solve parts of a larger problem, but don't interface well with each other. One important step forward would be to create an environment in which tools can be developed in ways that are less reliant on the initiatives of individual researchers and where tools can keep being maintained and improved even after those individuals have left. 
+For the `scoringutlis` package itself, a range of further improvements and features would be useful. One important area is the expansion of current tests and more explicit handling of inputs and errors in order to make error messages more useful for users. In terms of new features, adding more metrics to the package would be desirable, including an option to let users pass in custom scoring functions. Furthermore, it would be helpful if the package were able to score forecasts in a binned format. 
+
+Despite the wide-spread use of proper scoring rules, forecast evaluation is far from a solved problem and much work remains to be done. Several issues remain: 
+
+- there is no real way to compare forecasters across projects
+  - absolute scores scale with the difficulty of the task
+  - we don't really have a good understanding of what a good baseline model is. It could be a hub-ensemble. But it could also be one of the baseline models
+  
+- we only have rudimentary understanding how the resulting scores translate into "usefulness" of the forecasts. One forecast, for example, may show the correct trend, but be biased. And useful to a decision maker. Another forecast shows the wrong trend, but is closer to the actual values. Better score, less useful. - transformations of scores may be an important direction
+- several other possibilities: 
+  - creating composite scores
+  - custom weighting 
+  
+  
+- scores change a lot depending on how you evaluate them
+  - showing a range of different scores, showing robustness across different scores
+  - interactive exploration of scores
+  - shared standards of what should be reported and how
+  
+- more investigations into how to do significance tests between forecasts. Correlation between forecasts make it hard to evalute whether one model is better than another. It might be that one model is good in a specific phase / country. Or that one forecaster had a bad day which affects all forecasts made on a given day etc. 
+Problem: high dimenionsality of datsa
+  - modelling through regressions
+
+
+
+
+- which forecasts should we trust
+- how much better is better? 
+
+
+
+
+
+- hubs don't really know how to provide useful feedback to modellers. 
+what might be useful: some way to tell you how your scores would have changed had you altered your forecasts in a given way, e.g. increased or decreased uncertainty. 
+
+- standards for scoring forecasts would be helpful
+
+
+- it's important to develop methodology further. Hubs use it and it can influence decision-making. 
+
+Given the importance of forecast evaluations in public discourse 
+
+
+### Human judgement forecasting {-}
+
 
 The low number of participants was in part due to time constraints - the first forecasts were submitted within three weeks of the start of this PhD. However, even with more time and preparation, as was possible for the second study in the UK, we found it hard to recruit a large number of participants. 
 
@@ -77,13 +129,6 @@ This reflects a general problem in epidemiological forecasting: we don't really 
 - human judgement forecasting is hard and it's really tough to recruit enough participants.
 - Implications for the Forecast Hub evaluations. Two proper scoring rules commonly used in Epidemiology (among others, by the COVID-19 Forecast Hubs in the US, Europe, and Germany / Poland) are the 
 
-
-
-
-
-- Rt forecast stuff. 
-  - highly dependent on the model. CFR, no 
-
 - Established evidence that humans can be good, but still evidence needed regarding the role of human judgement in modelling
   - it would be nice to have a study where you compare a) human forecasts, b) human forecasters who adjust model outputs and c) just the model outputs. 
   - would also need better tools for that. 
@@ -92,7 +137,9 @@ This reflects a general problem in epidemiological forecasting: we don't really 
 
 ## Future work
 
-Adding more metrics to the package. In particular, the ability to pass in custom scoring functions. More metrics for point forecasts. 
+
+
+- lots of possibilities for the composite scores. 
 
 - doing qualitative interviews with human forecasters might be helpful. 
 
