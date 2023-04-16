@@ -105,66 +105,38 @@ Xthly, we don't have established good ways to provide useful feedback for foreca
 This thesis has attempted to shed some light on the opportunities and limitations associated with human judgement forecasting of infectious diseases such as COVID-19. Our studies provided some evidence that a mixed crowd of human forecasters and an ensemble of model-based predictions can produce forecasts of comparable quality. However, many of the details of what drives good performance, both in models and human forecasters, are still poorly understood. 
 
 Human judgement forecasting and mathematical modelling differ in their advantages and disadvantages. Whether or not one should aim to elicit forecasts from humans or from mathematical models therefore depends a lot on the application. 
+Human judgement may be particularly useful in situations where we're interested in questions that cannot easily captured by modelling or where the relevant information is hard to feed into models. Human judgement forecasting requires a lot of effort though, and past studies often struggled to retain participants over a long time. Both our studies suffered from low participation. For the first study, the low number of participants was in part due to time constraints - the first forecasts were submitted within three weeks of the start of this PhD. However, even with more time and preparation, as was possible for the second study in the UK, we found it hard to recruit and retain large number of participants. 
+Generating forecasts over a prolonged period of time may be easier using mathematical models that can be automated and only have to be adapted occasionally when circumstances change. Mathematical modelling may also be advantageous in settings with good data quality that benefit from the ability to do complex calculations. One advantage of mechanistic models is also that they may help us to understand the underlying infectious disease process better and apply those learnings to other settings. 
 
-Modelling useful if
-- long time frames
-- you want to learn something about the underlying disease
-- settings that benefit from the ability to do complex calculations
-- good data
+One interesting question was whether humans might have an advantage when predicting cases, whereas computational models might be better at forecasting a lagged quantity such as deaths. This was suggested by the results from our first study in Germany, as well as by \cite{mcandrewChimericForecastingCombining2022}. Our second study in the UK did not confirm this. However, performance when forecasting deaths in our second study may have been affected by changes in the age composition of cases and the rise of the Delta variant in the UK. It could be possible that humans found it easier to adapt to changes in the case fatality ratio than models. The story could be that humans are good at incorporating uncertain information and adapting to novel circumstances. Computational models, on the other hand, could be better at estimating the delay distribution between cases and deaths precisely, if circumstances stay constant. While this story seems compelling, it is important to note that given the small number of studies and low sample sizes, there is a high risk of overinterpreting noise. Ultimately, this highlights that we don't really have a sufficiently good understanding of how and why different forecasting approaches perform well. 
 
-Human judgement useful if
-- high uncertainty
-- lots of information that is hard to feed into a model
+One straightforward way to obtain a better understanding of human judgement forecasting would be to conduct qualitative interviews with forecasters. This could shed light on which factors forecasters take into account and the reasoning they apply. It could also help us understand in how far reasoning of experts and non-experts differs and provide information on how to improve predictive performance in the future. 
 
+Qualitative interviews could be used not only to obtain insights on human judgement forecasting, but also to get a better understanding of the role of human judgement in infectious disease modelling more generally. In our original study in Germany and Poland we described mathematical modelling necessarily being informed by the subjective judgement of the researchers developing the models, rather than representing a pure distillation of abstract mathematical assumptions. One aim of the study was to obtain a better understanding of the influence of that human judgement. As discussed in the last section on limitations, it is questionable whether we achieved this to the extent that had intended for. One way to address this question more directly would have been to conduct qualitative interviews with modellers who submitted models to the COVID-19 Forecast Hubs.
 
+Another interesting way of obtaining a better understanding of the influence of human judgement in infectious disease forecasting would be to ask humans to directly manipulate model outputs. This could either be done with the researchers themselves who developed the models, or a different set of forecasters. It would then be possible to analyse how human judgement alone, model-based predictions alone, or a combination of the two would perform. This would address our original research question more directly and could lead to promising ways of improving on the accuracy of both human and model-based predictions. Importantly, general purpose tools that would allow users to adapt arbitrary forecasts are not readily available at present. This is somewhat astonishing, given the widespread use of forecasting and the fact that researchers, at least anecdotally, often meaningfully disagree with aspects or details of their own model-based predictions. 
 
-
-is more useful in a given 
-
-
-
-However, our two studies are maybe better understand as case studies aiming to explore interesting features of human judgement forecast, rather than providing definitive results. Both studies suffered from a small number of participants. 
-
-
-The low number of participants was in part due to time constraints - the first forecasts were submitted within three weeks of the start of this PhD. However, even with more time and preparation, as was possible for the second study in the UK, we found it hard to recruit a large number of participants. 
-
-
-Forecast evaluation needs to be improved. 
-This reflects a general problem in epidemiological forecasting: we don't really have a good baseline model. 
-  
-- unclear whether humans are better than at deaths
-- humans can in principle keep up with models. 
-- human judgement forecasting is hard and it's really tough to recruit enough participants.
-- Implications for the Forecast Hub evaluations. Two proper scoring rules commonly used in Epidemiology (among others, by the COVID-19 Forecast Hubs in the US, Europe, and Germany / Poland) are the 
-
-- Established evidence that humans can be good, but still evidence needed regarding the role of human judgement in modelling
-  - it would be nice to have a study where you compare a) human forecasts, b) human forecasters who adjust model outputs and c) just the model outputs. 
-  - would also need better tools for that. 
+Combining human judgement and model-based predictions in order to mitigate weaknesses of any one approach is appealing. Related efforts generally follow two aims: improving predictive performance, and making forecasting efforts more scalable by reducing the cognitive load for humans. Several promising ideas have been proposed. One, having human forecasters manually adapt model outputs, was mentioned in the last paragraph. A second one, asking human forecaster to predict a quantity such as $R_t$ or the growth rate of an infectious disease process, was discussed in our paper on the UK Crowd Forecasting Challenge in Chapter \ref{sec:uk-challenge}. While performance in our study was bad, users quite liked the interface. The study explored an early prototype and there are several improvements that could be made, such as allowing forecasters to see the implied forecasts for deaths and influence it through adjusting the CFR. Another approach is to use human judgement in order to estimate or forecast parameters that are then used as an input to mathematical models (see e.g. \citep{venkatramananUtilityHumanJudgment2022a}). This, however, may be not be easy as interpreting and estimating technical parameters such as the serial interval requires expert subject matter knowledge. 
+Yet another idea would be to use human judgement to guide the formation of forecast ensembles. In the past, it has proven surprisingly difficult to create forecast ensembles that outperform a simple unweighted combination of individual forecasts (this has been called the "forecast combination puzzle", see e.g. \citep{claeskensForecastCombinationPuzzle2016}). Perhaps human judgement that is guided by an understanding of individual models could help in determining model weights that improve on equal weighting. Again, adequate tools would be needed to allow users to see the effect of choosing different model weights on the resulting ensemble. 
+Somewhat related, it could be useful to ask forecasters (for example, researchers who submit forecasts to Forecast Hubs) for their personal confidence in their own forecasts. These subjective estimates might be used to improve the ensemble forecast or provide learning opportunities for participants. 
 
 
 
-## Future work
-
-- doing qualitative interviews with human forecasters might be helpful. 
 
 
-- using samples
 
-- combining humans and models
-  - Rt forecasting
-  - using humans to predict parameters
-    - Metaculus question we authored
-    - Monkeypox work that Tom made - things are complicated
-  - Heaving humans come up with model weights
-  - having humans adapt models
+<!-- - combining humans and models -->
+  <!-- - using humans to predict parameters -->
+  <!--   - Metaculus question we authored -->
+  <!--   - Monkeypox work that Tom made - things are complicated -->
 
-- Related: Develop ways to scale human forecasting
-
-- how do details of human forecasters
+<!-- - Related: Develop ways to scale human forecasting -->
 
 
-An overall more promising approach might have been to give human forecasters the opportunity to directly manipulate the output from the computational models. These adapted forecasts could then have compared to the original predictions to investigate whether human judgement would have helped to improve directly on the computational models. These forecasts could then have been compared against human predictions made in the complete abscence of any epidemiological modelling. 
+<!-- ## Future work -->
 
+
+<!-- - using samples -->
 
 
 <!-- Parking lot -->
