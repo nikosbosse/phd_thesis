@@ -11,7 +11,7 @@
   title = {bookdown: Authoring Books and Technical Documents with R Markdown},
   author = {Yihui Xie},
   year = {2023},
-  note = {R package version 0.33},
+  note = {R package version 0.34},
   url = {https://CRAN.R-project.org/package=bookdown},
 }
 
@@ -35,7 +35,7 @@
   title = {knitr: A General-Purpose Package for Dynamic Report Generation in R},
   author = {Yihui Xie},
   year = {2023},
-  note = {R package version 1.42},
+  note = {R package version 1.43},
   url = {https://yihui.org/knitr/},
 }
 
@@ -47,20 +47,27 @@
   url = {https://CRAN.R-project.org/package=magrittr},
 }
 
+@Manual{R-nloptr,
+  title = {nloptr: R Interface to NLopt},
+  author = {Jelmer Ypma and Steven G. Johnson},
+  year = {2022},
+  note = {R package version 2.0.3},
+  url = {https://CRAN.R-project.org/package=nloptr},
+}
+
 @Manual{R-rmarkdown,
   title = {rmarkdown: Dynamic Documents for R},
-  author = {JJ Allaire and Yihui Xie and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone},
+  author = {JJ Allaire and Yihui Xie and Christophe Dervieux and Jonathan McPherson and Javier Luraschi and Kevin Ushey and Aron Atkins and Hadley Wickham and Joe Cheng and Winston Chang and Richard Iannone},
   year = {2023},
-  note = {R package version 2.20},
+  note = {R package version 2.22},
   url = {https://CRAN.R-project.org/package=rmarkdown},
 }
 
 @Manual{R-scoringutils,
   title = {scoringutils: Utilities for Scoring and Assessing Predictions},
-  author = {Nikos Bosse and {Sam Abbott} and Hugo Gruson},
+  author = {Nikos Bosse and {Sam Abbott} and Hugo Gruson and Sebastian Funk},
+  note = {https://doi.org/10.48550/arXiv.2205.07090, https://epiforecasts.io/scoringutils/},
   year = {2023},
-  note = {R package version 1.1.0},
-  url = {https://CRAN.R-project.org/package=scoringutils},
 }
 
 @Book{bookdown2016,
@@ -69,7 +76,7 @@
   publisher = {Chapman and Hall/CRC},
   address = {Boca Raton, Florida},
   year = {2016},
-  note = {ISBN 978-1138700109},
+  isbn = {978-1138700109},
   url = {https://bookdown.org/yihui/bookdown},
 }
 
@@ -94,13 +101,23 @@
   note = {ISBN 978-1466561595},
 }
 
+@Article{nloptr?,
+  title = {The NLopt nonlinear-optimization package},
+  author = {Steven G. Johnson},
+  year = {?},
+  journal = {?},
+  volume = {?},
+  number = {?},
+  pages = {?},
+}
+
 @Book{rmarkdown2018,
   title = {R Markdown: The Definitive Guide},
   author = {Yihui Xie and J.J. Allaire and Garrett Grolemund},
   publisher = {Chapman and Hall/CRC},
   address = {Boca Raton, Florida},
   year = {2018},
-  note = {ISBN 9781138359338},
+  isbn = {9781138359338},
   url = {https://bookdown.org/yihui/rmarkdown},
 }
 
@@ -110,7 +127,7 @@
   publisher = {Chapman and Hall/CRC},
   address = {Boca Raton, Florida},
   year = {2020},
-  note = {ISBN 9780367563837},
+  isbn = {9780367563837},
   url = {https://bookdown.org/yihui/rmarkdown-cookbook},
 }
 
@@ -123,50 +140,14 @@
   doi = {10.48550/ARXIV.2205.07090},
 }
 
-
-@Article{scoringRules,
-    title = {Evaluating Probabilistic Forecasts with {scoringRules}},
-    author = {Alexander Jordan and Fabian Kr\"uger and Sebastian Lerch},
-    journal = {Journal of Statistical Software},
-    year = {2019},
-    volume = {90},
-    number = {12},
-    pages = {1--37},
-    doi = {10.18637/jss.v090.i12},
+@Article{scoringutils2019,
+  title = {Evaluating Probabilistic Forecasts with {scoringRules}},
+  author = {Alexander Jordan and Fabian Kr\"uger and Sebastian Lerch},
+  journal = {Journal of Statistical Software},
+  year = {2019},
+  volume = {90},
+  number = {12},
+  pages = {1--37},
+  doi = {10.18637/jss.v090.i12},
 }
 
-@Manual{tscount,
-  title = {tscount: Analysis of Count Time Series},
-  author = {Tobias Liboschik and Roland Fried and Konstantinos Fokianos and Philipp Probst},
-  year = {2020},
-  note = {R package version 1.4.3},
-  url = {https://CRAN.R-project.org/package=tscount},
-}
-
-@Manual{Metrics,
-  title = {Metrics: Evaluation Metrics for Machine Learning},
-  author = {Ben Hamner and Michael Frasco},
-  year = {2018},
-  note = {R package version 0.1.4},
-  url = {https://CRAN.R-project.org/package=Metrics},
-}
-
-@Manual{topmodels,
-  title = {topmodels: Infrastructure for Forecasting and Assessment of Probabilistic
-Models},
-  author = {Achim Zeileis and Moritz N. Lang and Reto Stauffer},
-  year = {2023},
-  note = {R package version 0.3-0/r1723},
-  url = {https://R-Forge.R-project.org/projects/topmodels/},
-}
-
-@Article{epinow2,
-  title = {EpiNow2: Estimate Real-Time Case Counts and Time-Varying Epidemiological Parameters},
-  author = {Sam Abbott and Joel Hellewell and Joe Hickson and James Munday and Katelyn Gostic and Peter Ellis and Katharine Sherratt and Hamish Gibbs and Robin Thompson and Sophie Meakin and Nikos I. Bosse and Paul Mee and Sebastian Funk},
-  journal = {-},
-  year = {2020},
-  volume = {-},
-  number = {-},
-  pages = {-},
-  doi = {10.5281/zenodo.3957489},
-}

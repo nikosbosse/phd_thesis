@@ -1,0 +1,8 @@
+# Declaration {-}
+
+I, Nikos Ioannis Bosse, confirm that the work presented in this thesis is my own. Where information has been derived from other sources, I confirm that this has been indicated in the thesis.
+
+\vspace{2em}
+
+
+Nikos Bosse, December 2020

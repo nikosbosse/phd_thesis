@@ -1,5 +1,5 @@
-# (APPENDIX) Appendix {-}
+<!-- # (APPENDIX) Appendix {-} -->
 
-# Appendix
+<!-- # Appendix -->
 
-Some Appendix here. 
+<!-- Some Appendix here. Or probably not?  -->

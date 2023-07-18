@@ -1,7 +1,0 @@
-# Ackowldedgements {-}
-
-I would like to thank my supervisors. 
-
-
-
-\tableofcontents

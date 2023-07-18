@@ -1,0 +1,32 @@
+# Acronyms {-}
+
+```{r, echo=FALSE, include=TRUE}
+
+library(tibble)
+
+abb <- tribble(
+  ~Abbreviation, ~Meaning,
+  "CFR", "Case fatality rate",
+  "CRPS", "Continuous ranked probability score",
+  "CDF", "Cumulative density function",
+  "WIS", "Weighted interval score",
+  "CDC", "Centers for Disease Control and Prevention"
+)
+
+abb |>
+  dplyr::arrange(Abbreviation) |>
+  knitr::kable(format = 'latex', 
+               booktabs = TRUE, 
+               linesep = "\\addlinespace", 
+               bottomrule = "", 
+               toprule = "") %>%
+  # kableExtra::kable_styling(full_width = T) %>%
+  kableExtra::column_spec(1, width = "6cm") %>%
+  kableExtra::row_spec(row = 0, bold = TRUE)
+```
+
+
+\clearpage
+
+\setcounter{tocdepth}{1}
+\tableofcontents

@@ -35,7 +35,7 @@ site: bookdown::bookdown_site
 output: 
   bookdown::pdf_book:
     fig_caption: yes
-    toc_depth: 3
+    toc_depth: 2
     latex_engine: pdflatex
     # latex_engine: xelatex
     toc: False
@@ -76,6 +76,7 @@ knitr::opts_chunk$set(echo = TRUE)
 # automatically create a bib database for R packages
 knitr::write_bib(c(.packages(), 
                    'bookdown', 'knitr', 'rmarkdown', 'nloptr',
+                   'tscount', 'Metrics', 'topmodels',
                    'scoringutils', 'data.table',
                    'EpiSoon', 'EpiNow', 'EpiNow2',
                    'stackr', 'forecastHybrid', 

@@ -1,12 +1,12 @@
 # Thesis structure {-}
 
-- Declaration
-- Abstract
-- Acknowledgements
-- Table of Contents
-  - List of Figures
-  - List of Tables
-- Acronyms
+- Declaration X
+- Abstract X
+- Acknowledgements X
+- Table of Contents X
+  <!-- - List of Figures -->
+  <!-- - List of Tables -->
+- Acronyms X
 
 - Introduction and thesis outline
   - Motivation / Summary
