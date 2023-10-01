@@ -9,4 +9,4 @@ The scoring rules presented in this chapter have been used in many different con
 
 \includepdf[pages=-]{papers/Research Paper Cover Sheet-18 Paper 1.docx.pdf}
 
-<!-- \includepdf[pages=-]{papers/Paper-1-scoringutils.pdf} -->
+\includepdf[pages=-]{papers/Paper-1-scoringutils.pdf}
