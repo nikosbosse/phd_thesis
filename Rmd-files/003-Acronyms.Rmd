@@ -9,6 +9,8 @@ abb <- tribble(
   "CFR", "Case fatality rate",
   "CRPS", "Continuous ranked probability score",
   "CDF", "Cumulative density function",
+  "PDF", "Probability density function",
+  "MCMC", "Markov chain Monte Carlo",
   "WIS", "Weighted interval score",
   "CDC", "Centers for Disease Control and Prevention"
 )
