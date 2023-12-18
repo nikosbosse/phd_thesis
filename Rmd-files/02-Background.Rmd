@@ -33,7 +33,7 @@ where $F$ and $G$ are cumulative distribution functions.
 ### The forecasting paradigm 
 
 Since the data-generating distribution $G$ is usually unknown, forecasts have to be evaluated based on the predictive distribution $F$ and the observations alone. \cite{gneitingProbabilisticForecastsCalibration2007} proposed a framework for forecast evaluation that is centred around the notion that a forecaster should aim to "maximise the sharpness of the predictive distributions subject to calibration". Calibration hereby means that the forecasts are consistent with the observations and that there are no systematic deviations between the two. In their work, \cite{gneitingProbabilisticForecastsCalibration2007} distinguish several different forms of calibration (specifically: probabilistic calibration, marginal calibration and exceedance calibration). Sharpness is a property that pertains solely to the forecast and is independent of the observations. It describes how informative the predictive distribution is, i.e. how concentrated the probability mass is around any potential outcome. The opposite of sharpness is dispersion, i.e. how spread out the predictive distribution is. Sharpness and calibration are illustrated in Figure \ref{fig:forecast-paradigm}. 
-```{r setup, include=FALSE}
+```{r setup2, include=FALSE}
 knitr::opts_chunk$set(
   echo = FALSE, 
   cache = TRUE, 

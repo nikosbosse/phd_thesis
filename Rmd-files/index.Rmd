@@ -1,34 +1,40 @@
 --- 
 title: |
-  $~~~~~$
+  ![](logo_university.png){width=2in}
+  \vspace{2em}
   
-  $~~~~~$
+  \begin{LARGE} 
+  \textbf{Navigating Uncertainty - Evaluating Human and Model-Based Forecasting of COVID-19}
+  \end{LARGE}
   
-  **PhD Thesis**
-  
-  $~~~~~$
-  
-  $~~~~~$
+  \vspace{2em}
   
   Nikos Ioannis Bosse
   
-  $~~~~~$
+  \vspace{1em}
   
+  \large
+  
+  `r format(Sys.Date(), format="%B %Y")`
+  
+  \vspace{6em}
+  
+  \large
   Department of Infectious Disease Epidemiology
   
   Faculty of Epidemiology and Population Health
   
   Centre for Mathematical Modelling of Infectious Diseases
   
-  $~~~~~$
+  \vspace{2em}
   
   London School of Hygiene & Tropical Medicine
   
-  $~~~~~$
+  \vspace{5em}
   
-  $~~~~~$
+  \normalsize
+  Submitted in accordance with the requirements for the \linebreak degree of Doctor of Philosophy of the University of London
   
-  A long time ago in a galaxy far, far away...
   
   $~~~~~$
 site: bookdown::bookdown_site
@@ -68,7 +74,7 @@ description: "Some description"
 ```{r setup, include=FALSE}
 library(kableExtra)
 library(magrittr)
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
@@ -78,6 +84,7 @@ knitr::write_bib(c(.packages(),
                    'bookdown', 'knitr', 'rmarkdown', 'nloptr',
                    'tscount', 'Metrics', 'topmodels',
                    'scoringutils', 'data.table',
+                   'scoringRules', 'ggplot2',
                    'EpiSoon', 'EpiNow', 'EpiNow2',
                    'stackr', 'forecastHybrid', 
                    'quantgen', 'rstan'), 
@@ -126,9 +133,9 @@ London School of Hygiene & Tropical Medicine
 
 *Johannes Bracher*
 
-Postdoctoral Researcher
+Junior Research Group Leader 
 
-Chair of Statistics and Econometrics at Karlsruhe Insitute for Technology 
+Karlsruhe Institute of Technology
 
 \vspace*{\fill}
 

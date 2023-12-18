@@ -5,4 +5,4 @@ I, Nikos Ioannis Bosse, confirm that the work presented in this thesis is my own
 \vspace{2em}
 
 
-Nikos Bosse, A long time ago in a galaxy far, far away...
+Nikos Bosse, `r format(Sys.Date(), format="%B %d, %Y")`

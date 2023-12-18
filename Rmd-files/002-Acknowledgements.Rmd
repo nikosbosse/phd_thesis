@@ -1,16 +1,15 @@
 # Ackowldedgements {-}
 
-TODO
+I would like to extend my heartfelt gratitude to my supervisors, Sebastian Funk, Anne Cori, and Edwin van Leeuwen, as well as my advisory committee, Sam Abbott and Johannes Bracher, for their unwavering support and guidance.
 
-<!-- I would like to thank my supervisors Sebastian Funk, Anne Cori and Edwin van Leeuwen, as well as my advisory committee, Sam Abbott and Johannes Bracher.  -->
-<!-- Thank you, Sebastian, for giving me freedom as well as mentorship and guidance. I am very grateful for your kindness, patience and your support throughout my PhD. Thank you Anne, for kind and relentless encouragement and for making sure things got done. Thank you Edwin, for your warmth, your humour and all your support.  -->
-<!-- Thank you Sam,  -->
+Sebastian, thank you for giving me great freedom to explore and find my own way, while providing exceptional guidance and advise whenever I needed it. Thank you for all your kindness, patience and your support.
 
+Anne, your kind and persistent encouragement, as well as your clear and pointed suggestions have been invaluable. Thank you for being just the right amount of impatient and pragmatic and for making sure things got done in the kindest way possible. 
 
-<!-- I am very thankful to the working group at the London School of Hygiene and Tropical Medicine, to Sam, Joel, Kath, James and Sophie for the pleasure I had and have working with them. I especially thank Sam for his support and mentoring and his help with the `scoringutils` package.  -->
+Edwin, thank you for your warmth, your humour and all your support. It was a pleasure to work with you and have you as a supervisor. 
 
-<!-- I thank Malte, as well as Anne, Felix, Joel, and Sam for reading through parts of my work and giving me feedback.  -->
+Sam, you were one of the main reasons I started this PhD. Thank you for enduring my occasional less-than-perfect PR and for teaching me how to do better. Thank you for all the countless hours you have spent both on scoringutils and on relentlessly supporting me with my other projects. Acts speak louder than words, and your acts have spoken very loudly. Thank you for the truly exceptional mentorship and friendship you have shown me. 
 
-<!-- Yuling Yao has contributed large and important parts to the `stackr` package. Sebastian and researchers at the Forecast Hub have inspired important aspects of the evaluation process discussed in this thesis. Thank you for that.  -->
+Johannes, your insights on forecast evaluation have been invaluable and have made this work much better than it would have been without you. Thank you for the countless discussions on scoring rules, for your kindness, and for being always there to ensure that all things go their proper way.
 
-<!-- Thank you to my friends and family for their support.  -->
+Thank you to my friends and family who have supported me throughout this time. 

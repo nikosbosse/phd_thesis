@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Introduction {#intro}
 
 ## Motivation
@@ -33,7 +38,7 @@ It strives to accomplish this by fulfilling the following objectives:
 
 ## Thesis outline
 
-Chapter \@ref(background) provides some background for the following Chapters. It defines important terminology related to forecasting and modelling of infectious diseases used throughout this thesis. It introduces the concept of forecast evaluation and proper scoring rules (to be discussed in more depth in Chapter \ref{sec:scoringutils}) and provides an overview of past human judgement efforts in infectious disease forecasting. 
+Chapter \@ref(background) provides some background for the following Chapters. It defines important terminology related to forecasting and modelling of infectious diseases used throughout this thesis. It introduces the concept of forecast evaluation and proper scoring rules and provides an overview of past human judgement efforts in infectious disease forecasting. 
 
 Chapter \@ref(sec:scoringutils) (Paper 1) lays the foundation for this thesis by establishing an understanding of forecast evaluation and providing the tools necessary to conduct comparative forecast evaluations. It goes into detail on different existing approaches to evaluate forecasts and when they are appropriate. It introduces `scoringutils`, a software package in \textsf{R} that implements a selection of proper scoring rules and other evaluation metrics and offers users a coherent framework for forecast evaluation in \textsf{R}. The `scoringutils` package, as well as the theoretical aspects discussed in Chapter \@ref(sec:scoringutils) provide the basis for all following chapters. 
 
