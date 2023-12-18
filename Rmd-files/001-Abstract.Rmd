@@ -1,4 +1,13 @@
+\newgeometry{left=3cm, right=3cm, top = 5cm, bottom=5cm}
+
 # Abstract {-}
 
 In the Abstract, this thesis is really good. 
 one page. 
+
+
+- Forecasting is important
+
+
+
+\restoregeometry
