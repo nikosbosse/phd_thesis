@@ -52,7 +52,7 @@ output:
 documentclass: book
 classoption: openany
 output_dir: "../docs"
-bibliography: [bib/phdthesis.bib, bib/packages.bib, bib/GermanyPoland.bib] # bib/scoringutils.bib, 
+bibliography: [bib/phdthesis.bib, bib/packages.bib, bib/GermanyPoland.bib, bib/packages2.bib] # bib/scoringutils.bib, 
 biblio-style: apalike
 link-citations: yes
 header-includes:
@@ -86,7 +86,7 @@ knitr::write_bib(c(.packages(),
                    'scoringutils', 'data.table',
                    'scoringRules', 'ggplot2',
                    'EpiSoon', 'EpiNow', 'EpiNow2',
-                   'stackr', 'forecastHybrid', 
+                   'stackr', 'forecastHybrid', 'topmodels',
                    'quantgen', 'rstan'), 
                  'bib/packages.bib')
 ```
