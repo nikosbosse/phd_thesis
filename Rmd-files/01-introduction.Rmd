@@ -18,16 +18,16 @@ One aspect makes interpreting model performance and decision making in the begin
 The aim of this thesis is to help improve the usefulness of infectious disease forecasting for public health decision making in future outbreaks such as the COVID-19 pandemic by obtaining a deeper understanding of the following. 
 
 - What is a 'good' forecast in an epidemiological context, and how we can evaluate the quality of a forecast?
-- How do human judgement and mathematical modelling compare in terms of predictive performance and how can they best be used to obtain useful forecasts?
+- How do human judgement and mathematical modelling compare in terms of predictive performance? How do human judgment and mathematical modelling interplay and how can they best be used and combined to obtain useful forecasts?
 
 It strives to accomplish this by fulfilling the following objectives: 
 
-- Establish appropriate tools to evaluate predictions in `R` and review best practices in forecast evaluation (Paper 1, see Chapter \@ref(sec:scoringutils)).
+- Establish appropriate tools to evaluate predictions in `R` following best practices in forecast evaluation (Paper 1, see Chapter \@ref(sec:scoringutils)).
 - Develop tools to elicit human forecasts of infectious diseases, specifically COVID-19 (Paper 2, see Chapter \@ref(sec:GermanyPoland))
-- Analyse the role of human judgement in forecasting COVID-19 in Germany and Poland. Compare human judgement forecasts against model-based predictions and analyse the added benefit of human input over mathematical models (Paper 2, see Chapter \@ref(sec:GermanyPoland)).
+- Analyse the role of human judgement in forecasting COVID-19 in Germany and Poland. Compare human judgement forecasts against model-based predictions and analyse the added benefit of human input over mathematical modelling (Paper 2, see Chapter \@ref(sec:GermanyPoland)).
 - Improve current evaluation methods so that they are betters suited for evaluating forecasts in an epidemiological context (Paper 3, see Chapter \@ref(sec:LogTransformation)).
 - Examine the potential to use public crowd forecasting tournaments to predict COVID-19 in the UK and explore possibilities to combine human judgement and epidemiological modelling (Paper 4, see Chapter \@ref(sec:UKforecastingChallenge)).
-- Examine whether results obtained in Paper 2 can replicate in a different setting with a different crowd of forecasters (Paper 4, see Chapter \@ref(sec:UKforecastingChallenge)). 
+- Examine how well results from one human judgement forecasting effort replicate in a different setting with a different crowd of forecasters (Paper 4, see Chapter \@ref(sec:UKforecastingChallenge)). 
 
 <!-- 2. Collect predictions of COVID-19 from humans in Germany, Poland. Compare these human -->
 <!-- predictions against model-based forecasts to discern relative strengths and weaknesses of human -->
@@ -38,7 +38,7 @@ It strives to accomplish this by fulfilling the following objectives:
 
 ## Thesis outline
 
-Chapter \@ref(background) provides some background for the following Chapters. It defines important terminology related to forecasting and modelling of infectious diseases used throughout this thesis. It introduces the concept of forecast evaluation and proper scoring rules and provides an overview of past human judgement efforts in infectious disease forecasting. 
+Chapter \@ref(background) provides some background for the following Chapters. It defines important terminology related to forecasting and modelling of infectious diseases used throughout this thesis. It reviews core concepts related to forecast evaluation and proper scoring rules and provides an overview of past human judgement efforts in infectious disease forecasting. 
 
 Chapter \@ref(sec:scoringutils) (Paper 1) introduces `scoringutils`, a software package in \textsf{R} that implements a selection of proper scoring rules and other evaluation metrics and offers users a coherent framework for forecast evaluation in \textsf{R}. The `scoringutils` package provides the basis for all forecast evaluations conducted as part of this thesis. 
 
@@ -53,7 +53,7 @@ Chapter \@ref(sec:discussion) discusses the results and implications of the work
 
 ## Code
 
-The code for this thesis is publicly available on GitHub at \url{https://github.com/nikosbosse/phd_thesis}. The scoringutils package and the code for Paper 1 is available at \url{https://github.com/epiforecasts/scoringutils}. The code for Paper 2 is available at \url{https://github.com/epiforecasts/covid.german.forecasts}. The code for paper 3 is available at \url{https://github.com/epiforecasts/transformation-forecast-evaluation}. The code for Paper 4 is available at \url{https://github.com/epiforecasts/uk-crowd-forecasting-challenge}. 
+The code for this thesis is publicly available on GitHub\footnote{\url{https://github.com/nikosbosse/phd_thesis}}, as is the code for the scoringutils package and the accompanying Paper (Paper 1)\footnote{\url{https://github.com/epiforecasts/scoringutils}}, , the code for the Paper on crowd forecasts in Germany and Poland (Paper 2)\footnote{\url{https://github.com/epiforecasts/covid.german.forecasts}}, the code for the Paper on transforming forecasts before scoring them (Paper 3)\footnote{\url{https://github.com/epiforecasts/transformation-forecast-evaluation}}, and the code for the Paper on the UK Crowd Forecasting Challenge (Paper 4)\footnote{\url{https://github.com/epiforecasts/uk-crowd-forecasting-challenge}}. 
 
 <!-- ## Additional achievements -->
 <!-- - talks -->
