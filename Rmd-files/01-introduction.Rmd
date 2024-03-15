@@ -46,7 +46,7 @@ Chapter \@ref(sec:discussion) discusses the results and implications of the work
 
 ## Code
 
-The code for this thesis is publicly available on GitHub\footnote{\url{https://github.com/nikosbosse/phd_thesis}}, as is the code for the scoringutils package and the accompanying Paper (Paper 1)\footnote{\url{https://github.com/epiforecasts/scoringutils}}, , the code for the Paper on crowd forecasts in Germany and Poland (Paper 2)\footnote{\url{https://github.com/epiforecasts/covid.german.forecasts}}, the code for the Paper on transforming forecasts before scoring them (Paper 3)\footnote{\url{https://github.com/epiforecasts/transformation-forecast-evaluation}}, and the code for the Paper on the UK Crowd Forecasting Challenge (Paper 4)\footnote{\url{https://github.com/epiforecasts/uk-crowd-forecasting-challenge}}. 
+The code for this thesis is publicly available on GitHub\footnote{\url{https://github.com/nikosbosse/phd_thesis}}, as is the code for the scoringutils package and the accompanying Paper (Paper 1)\footnote{\url{https://github.com/epiforecasts/scoringutils}}, the code for the Paper on crowd forecasts in Germany and Poland (Paper 2)\footnote{\url{https://github.com/epiforecasts/covid.german.forecasts}}, the code for the Paper on transforming forecasts before scoring them (Paper 3)\footnote{\url{https://github.com/epiforecasts/transformation-forecast-evaluation}}, and the code for the Paper on the UK Crowd Forecasting Challenge (Paper 4)\footnote{\url{https://github.com/epiforecasts/uk-crowd-forecasting-challenge}}. 
 
 <!-- ## Additional achievements -->
 <!-- - talks -->
