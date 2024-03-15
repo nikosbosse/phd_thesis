@@ -10,7 +10,7 @@ This chapter also extends the work in Chapter \ref{sec:GermanyPoland} by explori
 
 \clearpage
 
-\includepdf[pages=-]{papers/Research Paper Cover Sheet-18 Paper 4.docx.pdf}
+<!-- \includepdf[pages=-]{papers/Research Paper Cover Sheet-18 Paper 4.docx.pdf} -->
 
 \includepdf[pages=-]{papers/Paper-4-UK-challenge.pdf}
 \includepdf[pages=-]{papers/Paper-4-SI.pdf}

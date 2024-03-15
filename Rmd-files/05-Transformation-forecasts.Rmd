@@ -10,7 +10,7 @@ Chapter \@ref(sec:LogTransformation) explores ways in which the forecast evaluat
 \clearpage
 
 
-\includepdf[pages=-]{papers/Research Paper Cover Sheet-18 Paper 3.docx.pdf}
+<!-- \includepdf[pages=-]{papers/Research Paper Cover Sheet-18 Paper 3.docx.pdf} -->
 
 \includepdf[pages=-]{papers/Paper-3-LogTransformation.pdf}
 \includepdf[pages=-]{papers/Paper-3-LogTransformation-SI.pdf}

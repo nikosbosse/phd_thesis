@@ -8,6 +8,6 @@ The scoring rules implemented in `scoringutils` are mostly not specific for fore
 
 \clearpage
 
-\includepdf[pages=-]{papers/Research Paper Cover Sheet-18 Paper 1.docx.pdf}
+<!-- \includepdf[pages=-]{papers/Research Paper Cover Sheet-18 Paper 1.docx.pdf} -->
 
 \includepdf[pages=-]{papers/Paper-1-scoringutils.pdf}

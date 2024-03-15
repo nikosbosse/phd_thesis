@@ -11,7 +11,7 @@ The study was limited both by resource constraints as well as the time that was 
 \clearpage
 
 
-\includepdf[pages=-]{papers/Research Paper Cover Sheet-18 Paper 2.docx.pdf}
+<!-- \includepdf[pages=-]{papers/Research Paper Cover Sheet-18 Paper 2.docx.pdf} -->
 
 \includepdf[pages=-]{papers/Paper-2-Forecasts-Germany-Poland.pdf}
 \includepdf[pages=-]{papers/Paper-2-SI.pdf}
