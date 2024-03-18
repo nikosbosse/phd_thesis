@@ -1,50 +1,11 @@
---- 
-title: |
-  ![](logo_university.png){width=2in}
-  \vspace{2em}
-  
-  \begin{LARGE} 
-  \textbf{Navigating Uncertainty - Evaluating Human and Model-Based Forecasting of COVID-19}
-  \end{LARGE}
-  
-  \vspace{2em}
-  
-  Nikos Ioannis Bosse
-  
-  \vspace{1em}
-  
-  \large
-  
-  `r format(Sys.Date(), format="%B %Y")`
-  
-  \vspace{6em}
-  
-  \large
-  Department of Infectious Disease Epidemiology
-  
-  Faculty of Epidemiology and Population Health
-  
-  Centre for Mathematical Modelling of Infectious Diseases
-  
-  \vspace{2em}
-  
-  London School of Hygiene & Tropical Medicine
-  
-  \vspace{5em}
-  
-  \normalsize
-  Submitted in accordance with the requirements for the \linebreak degree of Doctor of Philosophy of the University of London
-  
-  
-  $~~~~~$
+---
 site: bookdown::bookdown_site
 output: 
   bookdown::pdf_book:
     fig_caption: yes
     toc_depth: 2
     latex_engine: pdflatex
-    # latex_engine: xelatex
-    toc: False
+    toc: false
     includes:
       in_header: preamble.tex
     citation_package: natbib
@@ -52,24 +13,58 @@ output:
 documentclass: book
 classoption: openany
 output_dir: "../docs"
-bibliography: [bib/phdthesis.bib, bib/packages.bib, bib/GermanyPoland.bib, bib/packages2.bib] # bib/scoringutils.bib, 
+bibliography: [bib/phdthesis.bib, bib/packages.bib, bib/GermanyPoland.bib, bib/packages2.bib]
 biblio-style: apalike
 link-citations: yes
 header-includes:
+  - \usepackage{setspace}
+  - \onehalfspacing
   - \usepackage{amssymb}
   - \usepackage{tabu}
-  # stuff to make sure that the word "Chapter doesn't appear randomly"
   - \usepackage{titlesec} 
   - \titleformat{\chapter}{\normalfont\LARGE\bfseries}{\thechapter}{1em}{}
   - \titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-  # include pdf pages
   - \usepackage{pdfpages}
+  - \usepackage{graphicx}
 after_body-includes:
   - \addcontentsline{toc}{chapter}{Bibliography}
 github-repo: nikosbosse/phd_thesis
 cover-image: logo_university.png
 description: "Some description"
 ---
+
+\begin{titlepage}
+\centering
+\includegraphics[width=2in]{logo_university.png} \\[2em]
+
+\begin{spacing}{2}
+
+{\LARGE \textbf{Navigating Uncertainty - Evaluating Human and Model-Based Forecasting of COVID-19}}\\[2em]
+
+{\Large Nikos Ioannis Bosse}\\[1em]
+
+{\Large `r format(Sys.Date(), format="%B %Y")`}\\[6em] % was \large
+
+%\raggedright
+\Large
+\begin{spacing}{1.5}
+Department of Infectious Disease Epidemiology\\
+Faculty of Epidemiology and Population Health\\
+Centre for Mathematical Modelling of Infectious Diseases\\[2em]
+London School of Hygiene \& Tropical Medicine\\[4em]
+\end{spacing}
+\large % was \normalsize
+\begin{spacing}{1.5}
+Submitted in accordance with the requirements for the degree of Doctor of Philosophy of the University of London\\[3em]
+\end{spacing}
+
+Funded by the Health Protection Research Unit (grant code NIHR200908)
+
+Research group affiliation: EpiForecasts
+\end{spacing}
+\end{titlepage}
+
+
 
 ```{r setup, include=FALSE}
 library(kableExtra)
