@@ -6,7 +6,8 @@ _book
 _bookdown_files
 rsconnect
 .DS_Store
-docs/
+docs/pdf-thesis.tex
+docs/2024_EPH_PhD_Bosse_N.pdf
 Rmd-files/pdf-thesis.aux
 Rmd-files/pdf-thesis.bbl
 Rmd-files/pdf-thesis.blg
