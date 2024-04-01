@@ -121,7 +121,7 @@ Often, the quality of a forecast is summarised into a single number using so-cal
 
 
 #### The logarithmic scoring rule
-The logarithmic scoring rule is simply the negative log-likelihood of the predictive distribution evaluated at the observed value, i.e. 
+The logarithmic scoring rule is simply the negative logarithm of the density of the predictive distribution evaluated at the observed value
 $$ \text{log score} = -\log f(y), $$
 where $f$ is the predictive probability density function (PDF) and y is the observed value. For discrete forecasts, the log score can be computed as
   $$ \text{log score} = -\log p_y, $$
