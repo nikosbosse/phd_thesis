@@ -24,7 +24,7 @@ It strives to accomplish this by fulfilling the following objectives:
 
 - Establish appropriate tools to evaluate predictions in `R` following best practices in forecast evaluation (Paper 1, see Chapter \@ref(sec:scoringutils)).
 - Develop tools to elicit human forecasts of infectious diseases, specifically COVID-19 (Paper 2, see Chapter \@ref(sec:GermanyPoland))
-- Analyse the role of human judgement in forecasting COVID-19 in Germany and Poland. Compare human judgement forecasts against model-based predictions and analyse the added benefit of human input over mathematical modelling (Paper 2, see Chapter \@ref(sec:GermanyPoland)).
+- Analyse the role of human judgement in forecasting COVID-19 in Germany and Poland. Compare human judgement forecasts against model-based predictions and analyse the added benefit of human input over mathematical and statistical modelling (Paper 2, see Chapter \@ref(sec:GermanyPoland)).
 - Improve current evaluation methods so that they are better suited for evaluating forecasts in an epidemiological context (Paper 3, see Chapter \@ref(sec:LogTransformation)).
 - Examine the potential to use public crowd forecasting tournaments to predict COVID-19 in the UK and explore possibilities to combine human judgement and epidemiological modelling (Paper 4, see Chapter \@ref(sec:UKforecastingChallenge)).
 - Examine how well results from one human judgement forecasting effort replicate in a different setting with a different crowd of forecasters (Paper 4, see Chapter \@ref(sec:UKforecastingChallenge)). 

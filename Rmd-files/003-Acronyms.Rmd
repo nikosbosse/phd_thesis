@@ -30,5 +30,7 @@ abb |>
 
 \clearpage
 
+\singlespacing
 \setcounter{tocdepth}{1}
 \tableofcontents
+\onehalfspacing
